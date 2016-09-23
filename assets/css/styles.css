@@ -1,0 +1,230 @@
+.logo{
+    position: absolute;
+    width: 400px;
+    height: 75px;
+    background-color: #fff;
+    z-index: 100;
+    top: 20px;
+    -webkit-box-shadow: 1px 7px 5px -5px rgba(128,128,128,0.63);
+    -moz-box-shadow: 1px 7px 5px -5px rgba(128,128,128,0.63);
+    box-shadow: 1px 7px 5px -5px rgba(128,128,128,0.63);
+}
+
+.logo > a img {
+    width: 90%;
+    padding: 12px 10px 5px 10px;
+}
+
+.top-nav {
+    background-color: #f26235;
+    position: relative;
+    top: -20px;
+    height: 60px;
+    z-index: 90;
+}
+
+.small-logo {
+    width: 300px;
+    height: auto;
+    background-color: #fff;
+    padding: 5px 15px;
+}
+
+.small-logo > a img {
+    width: 98%;
+}
+
+.intro{width:70%; margin: 0 auto; padding: 20px 0;}
+
+.main-icon i {
+    color: #dddbdb;
+    padding-bottom: 20px;
+}
+
+.ui[class*="top fixed"].menu {
+    background-color: #f26235;
+    color: #fff;
+    height: 50px;
+}
+
+.ui.menu .active.item, .ui.menu .item {
+    color: #fff;
+}
+
+.ui.menu .item:before { background: none;}
+
+.ui.inverted.masthead.segment.home  {
+    background:url("../images/home.jpg") no-repeat scroll center top transparent;
+    background-size: cover;
+    border-bottom: 2px solid rgba(163,161,163,1);
+    -webkit-box-shadow: 0px 17px 52px -16px rgba(163,161,163,1);
+    -moz-box-shadow: 0px 17px 52px -16px rgba(163,161,163,1);
+    box-shadow: 0px 17px 52px -16px rgba(163,161,163,1);
+}
+
+.ui.inverted.segment { background: none;}
+
+.ui > .container {width: 90%; margin: 0 auto}
+
+.ui.secondary.inverted.pointing.menu { border-width: 0;}
+
+.ui.secondary.pointing.menu { border-bottom: none}
+
+.hidden.menu {
+    display: none;
+}
+
+.masthead.segment {
+    min-height: 700px;
+    padding: 1em 0em;
+}
+.masthead .logo.item img {
+    margin-right: 1em;
+}
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+    /*background-color: #00a65a;*/
+}
+
+.ui.form input.main-search {width: 55%; margin-bottom: 20px;}
+
+div.ui.large.button, div.ui.small.home.button { background-color: #f26235; border-bottom: 3px solid #cc522c; color: #fff}
+
+div.ui.text.container {
+    max-width: 1250px !important;
+    background: rgba(255, 255, 255, 0.8);
+    padding-bottom: 25px;
+    font-size: 13px;
+}
+
+.masthead h1.ui.header {
+    margin-top: 3em;
+    /*margin-bottom: 0em;*/
+    font-size: 3em;
+    font-weight: normal;
+    color: #000;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+    padding-top: 10px;
+    color: #7ea248;
+    line-height: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ui.vertical.stripe {
+    padding: 4em 0em;
+}
+.ui.vertical.stripe h3 {
+    font-size: 2em;
+}
+.ui.vertical.stripe .button + h3,
+.ui.vertical.stripe p + h3 {
+    margin-top: 3em;
+}
+.ui.vertical.stripe .floated.image {
+    clear: both;
+}
+.ui.vertical.stripe p {
+    font-size: 1.24em;
+}
+.ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0em;
+}
+
+.quote.stripe.segment {
+    padding: 0em;
+}
+.quote.stripe.segment .grid .column {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.ui.inverted.segment.footer {
+    padding: 5em 0em;
+    background: #000;
+}
+
+.secondary.pointing.menu .toc.item {
+    display: none;
+}
+
+p.bottom{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* LOGIN FORM */
+
+.login {
+}
+
+.login::after {
+    content: "";
+    background: url(../images/login-page.jpg);
+    background-size: cover;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/*.login {*/
+    /*background:url("../images/login-page.jpg") no-repeat;*/
+    /*background-size: cover;*/
+    /*background: rgba(255, 255, 255, 0.6);*/
+/*}*/
+
+.image{width: 70%; display: inline-block; margin-top: 100px; padding-bottom: -19px;}
+
+.column.loginBox {
+    max-width: 450px;
+}
+
+.ui.header .content {
+       width: 90%
+}
+
+/* Articles */
+
+.masthead.segment.articles {
+    min-height: 0;
+}
+
+.articleHeader {
+    margin-top: 35px;
+}
+
+.articleList { margin: 35px 0; padding: 25px 0;}
+
+@media only screen and (max-width: 700px) {
+    .ui.fixed.menu {
+        display: none !important;
+    }
+    .secondary.pointing.menu .item,
+    .secondary.pointing.menu .menu {
+        display: none;
+    }
+    .secondary.pointing.menu .toc.item {
+        display: block;
+    }
+    .masthead.segment {
+        min-height: 350px;
+    }
+    .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+    }
+    .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+    }
+}
