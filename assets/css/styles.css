@@ -1,7 +1,7 @@
 .logo{
     position: absolute;
-    width: 400px;
-    height: 75px;
+    width: 300px;
+    height: 65px;
     background-color: #fff;
     z-index: 100;
     top: 20px;
@@ -36,6 +36,10 @@
 
 .intro{width:70%; margin: 0 auto; padding: 20px 0;}
 
+.ui.green.table {
+    border-top: .2em solid #7DA248;
+}
+
 .main-icon i {
     color: #dddbdb;
     padding-bottom: 20px;
@@ -49,6 +53,15 @@
 
 .ui.menu .active.item, .ui.menu .item {
     color: #fff;
+}
+
+.ui.secondary.inverted.pointing.menu .active.item {
+    border-color: #A7CF44;
+}
+
+.ui.secondary.pointing.menu .item{
+    padding: .78714286em 1.14285714em;
+    border-bottom-width: 5px;
 }
 
 .ui.menu .item:before { background: none;}
@@ -88,7 +101,8 @@
 
 .ui.form input.main-search {width: 55%; margin-bottom: 20px;}
 
-div.ui.large.button, div.ui.small.home.button { background-color: #f26235; border-bottom: 3px solid #cc522c; color: #fff}
+div.ui.large.button, div.ui.small.home.button, .ui.fluid.button.home
+{ background-color: #f26235; border-bottom: 3px solid #cc522c; color: #fff}
 
 div.ui.text.container {
     max-width: 1250px !important;
@@ -203,7 +217,19 @@ p.bottom{
     margin-top: 35px;
 }
 
-.articleList { margin: 35px 0; padding: 25px 0;}
+.articleList { margin-bottom: 35px; padding: 25px 0;}
+
+.ui.table tr td {padding-left: 10px; padding-right: 10px;}
+
+.ui.table tr td.userPosts, .ui.table tr td.tableBtn {
+    padding-top: 35px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+}
 
 @media only screen and (max-width: 700px) {
     .ui.fixed.menu {
