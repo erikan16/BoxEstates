@@ -175,8 +175,7 @@ p.bottom{
 
 /* LOGIN FORM */
 
-.login {
-}
+.loginBox{ margin: 175px auto 0 auto;}
 
 .login::after {
     content: "";
@@ -189,6 +188,12 @@ p.bottom{
     right: 0;
     position: absolute;
     z-index: -1;
+}
+
+h2.ui.header {
+    color: #666;
+    font-size: 1.314rem;
+    margin: calc(1rem - 0.14285em ) 0em 1rem;
 }
 
 /*.login {*/
@@ -225,11 +230,19 @@ p.bottom{
     padding-top: 35px;
 }
 
+.ui.button.buy {font-size: .90em;}
+
+.mapContainer { margin-bottom: 20px;}
+
 #map {
-    width: 100%;
+    width: 500px;
     height: 100%;
-    background: #ddd;
+    margin-bottom: 20px;
 }
+
+.image {width:100%; margin-top: 0;}
+
+h2.ui.price {color: #fff;}
 
 @media only screen and (max-width: 700px) {
     .ui.fixed.menu {
