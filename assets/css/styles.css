@@ -67,7 +67,7 @@
 .ui.menu .item:before { background: none;}
 
 .ui.inverted.masthead.segment.home  {
-    background:url("../images/home.jpg") no-repeat scroll center top transparent;
+    background:url("../images/1.0_home.jpg") no-repeat scroll center top transparent;
     background-size: cover;
     border-bottom: 2px solid rgba(163,161,163,1);
     -webkit-box-shadow: 0px 17px 52px -16px rgba(163,161,163,1);
@@ -179,7 +179,7 @@ p.bottom{
 
 .login::after {
     content: "";
-    background: url(../images/login-page.jpg);
+    background: url(../images/1.0_login-page.jpg);
     background-size: cover;
     opacity: 0.6;
     top: 0;
