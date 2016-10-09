@@ -1,3 +1,41 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding-top: 34px;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 32px;
+}
+
+
+.ui.inverted.segment.footer {
+    background: #000;
+    margin-top: 60px;
+    padding: 4% 0;
+}
+
 .logo{
     position: absolute;
     width: 300px;
@@ -159,11 +197,6 @@ div.ui.text.container {
     padding-bottom: 5em;
 }
 
-.ui.inverted.segment.footer {
-    padding: 5em 0em;
-    background: #000;
-}
-
 .secondary.pointing.menu .toc.item {
     display: none;
 }
@@ -176,7 +209,9 @@ p.bottom{
 
 /* LOGIN FORM */
 
-.loginBox{ margin: 175px auto 0 auto;}
+.loginBox{
+    margin: 175px auto 0 auto;
+}
 
 .login::after {
     content: "";
@@ -203,7 +238,12 @@ h2.ui.header {
     /*background: rgba(255, 255, 255, 0.6);*/
 /*}*/
 
-.image{width: 70%; display: inline-block; margin-top: 100px; padding-bottom: -19px;}
+.image{
+    width: 70%;
+    display: inline-block;
+    margin-top: 100px;
+    padding-bottom: -19px;
+}
 
 .column.loginBox {
     max-width: 450px;
@@ -231,17 +271,69 @@ h2.ui.header {
     padding-top: 35px;
 }
 
-.ui.button.buy {font-size: .90em;}
+.ui.button.buy {
+    font-size: .90em;
+}
 
-.mapContainer { margin-bottom: 20px;}
-
-#map {
-    width: 500px;
-    height: 100%;
+.mapContainer {
     margin-bottom: 20px;
 }
 
-.image {width:100%; margin-top: 0;}
+#map {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+    overflow: auto;
+}
+
+.ui.card > .content {
+    font-size: .85em;
+}
+
+.image {
+    width:100%;
+    margin-top: 0;
+}
+
+.ui.cards > .card > a .extra {
+    padding: .75em 1em;
+}
+
+.ui.segment {
+    border:none;
+    box-shadow: none;
+}
+
+.ui.column.grid > .mobile[class*="sixteen wide"], .ui.grid > .mobile[class*="sixteen wide"] {
+    width: 80% !important;
+    margin: 0 auto;
+}
+
+div.card {
+    background: #FFF;
+    padding: 0;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
+}
+
+div.extra {
+    padding: .75em 1em;
+}
+
+h1 > span {
+    font-size: 15px;
+    color: #666;
+}
+
+h1 > span.address {
+    font-size: 20px;
+    color: #000;
+}
+
+img {
+    width: 100%;
+}
 
 h2.ui.price {color: #fff;}
 
@@ -298,13 +390,104 @@ h2.ui.price {color: #fff;}
     padding-bottom: 5em;
 }
 
-.footer.segment {
-    padding: 5em 0em;
-}
-
 .secondary.pointing.menu .toc.item {
     display: none;
 }
+
+.overlay {
+    float: left;
+    margin: 0em 3em 1em 0em;
+}
+.overlay .menu {
+    position: relative;
+    left: 0;
+    transition: left 0.5s ease;
+}
+
+.overlay.fixed .menu {
+    left: 970px;
+}
+
+.text.container .left.floated.image {
+    margin: 2em 2em 2em -4em;
+}
+.text.container .right.floated.image {
+    margin: 2em -4em 2em 2em;
+}
+
+.textWrapper {
+    /*margin: 4% 5%;*/
+    margin: 4% 5% 4% 0;
+    width: 85%
+
+}
+
+.ui.compact.menu > a {
+    color: #666;
+}
+
+.ui.compact.menu a:hover {
+    background: #7ea248;
+    color: #fff;
+}
+
+div.agent {
+    margin: 0 38px;
+}
+
+h2.ui.header {
+    font-size: 1rem;
+}
+
+.ui.compact.menu {
+    margin: 10px 44px;
+}
+
+.ui.inverted.button {
+    padding: .68571429em 1.25em;
+    font-size: .75rem;
+}
+
+/* House Search - Individual */
+
+.object {
+    width: 100%;
+    height: 10%;
+    overflow: auto;
+}
+
+#gallery {
+    width: 100%;
+}
+
+.marketInfo, .agentInfo {
+    margin-top: 35px;
+}
+
+.object-fit_fill { object-fit: fill }
+.object-fit_contain { object-fit: contain }
+.object-fit_cover { object-fit: cover }
+.object-fit_none { object-fit: none }
+.object-fit_scale-down { object-fit: scale-down }
+
+@media only screen and (max-width: 1199px) {
+    .overlay.fixed .menu {
+        left: 820px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .overlay.fixed .menu {
+        left: 670px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .overlay.fixed .menu {
+        left: 670px;
+    }
+}
+
 
 @media only screen and (max-width: 700px) {
     .ui.fixed.menu {
@@ -336,6 +519,9 @@ h2.ui.price {color: #fff;}
     }
     div.intro {
         font-size: 12px;
+    }
+    .overlay.fixed .menu {
+        left:0;
     }
 }
 
