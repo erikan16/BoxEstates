@@ -33,6 +33,9 @@
                                 }
                             })
                     ;
+                    $('.ui.sidebar')
+                            .sidebar('attach events', '.toc.item')
+                    ;
                 })
         ;
     </script>
@@ -62,6 +65,16 @@
         </div>
     </div>
 
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+        <a class="active item">Home</a>
+        <a class="item">Work</a>
+        <a class="item">Company</a>
+        <a class="item">Careers</a>
+        <a class="item">Login</a>
+        <a class="item">Signup</a>
+    </div>
+
 
     <!-- Page Contents -->
     <div class="pusher">
@@ -76,7 +89,7 @@
                         <div class="right item">
                             <a href="house_search.html" class=" item">Buy</a>
                             <a class="item">Sell</a>
-                            <a class="item">Agent Finder</a>
+                            <a href="agent_finder.html" class="item">Agent Finder</a>
                             <a href="articles.html" class="item">Articles</a>
                             <a href="login.html" class="ui inverted button">Log in</a>
                             <!--<a class="ui inverted button">Sign Up</a>-->
@@ -102,34 +115,36 @@
             <div class="ui middle container">
                 <div class="ui grid">
                     <div class="three column row">
-                        <div class="center aligned column">
-                            <div class="main-icon">
-                                <i class="massive tags icon"></i>
+                        <div class="ui equal width stackable internally celled grid">
+                            <div class="center aligned column">
+                                <div class="main-icon">
+                                    <i class="massive tags icon"></i>
+                                </div>
+                                <div class="intro">
+                                    <p>Our current listings of homes for sale and for rent are always up to date. We make searching a breeze.  </p>
+                                </div>
+                                <div class="ui small button home">Read More</div>
                             </div>
-                            <div class="intro">
-                                <p>Our current listings of homes for sale and for rent are always up to date. We make searching a breeze.  </p>
-                            </div>
-                            <div class="ui small button home">Read More</div>
-                        </div>
 
-                        <div class="center aligned column">
-                            <div class="main-icon">
-                                <i class="massive folder open icon"></i>
+                            <div class="center aligned column">
+                                <div class="main-icon">
+                                    <i class="massive folder open icon"></i>
+                                </div>
+                                <div class="intro">
+                                    <p>Search through articles that pertain to areas you are interested in buying or looking to travel to. </p>
+                                </div>
+                                <div class="ui small button home">Read More</div>
                             </div>
-                            <div class="intro">
-                                <p>Search through articles that pertain to areas you are interested in buying or looking to travel to. </p>
-                            </div>
-                            <div class="ui small button home">Read More</div>
-                        </div>
 
-                        <div class="center aligned column">
-                            <div class="main-icon">
-                                <i class="massive call icon"></i>
+                            <div class="center aligned column">
+                                <div class="main-icon">
+                                    <i class="massive call icon"></i>
+                                </div>
+                                <div class="intro">
+                                    <p>Need any assistance we are here to help. Give us a call and we'll get you up and running in no time.</p>
+                                </div>
+                                <div class="ui small button home">Read More</div>
                             </div>
-                            <div class="intro">
-                                <p>Need any assistance we are here to help. Give us a call and we'll get you up and running in no time.</p>
-                            </div>
-                            <div class="ui small button home">Read More</div>
                         </div>
                     </div>
                 </div>
