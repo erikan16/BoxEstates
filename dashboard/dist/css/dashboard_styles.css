@@ -471,6 +471,7 @@ a:focus {
     position: absolute;
     right: 0;
     left: auto;
+    box-shadow: 2px 2px 2px 4px rgba(104, 104, 103, 0.2);
 }
 @media (max-width: 991px) {
     .navbar-custom-menu > .navbar-nav {
@@ -1909,7 +1910,7 @@ a:focus {
     background-color: #fff;
 }
 .skin-blue .main-header li.user-header {
-    background-color: #f26235;
+    background-color: #A7CF44;
 }
 .skin-blue .content-header {
     background: transparent;
