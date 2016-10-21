@@ -147,8 +147,8 @@
                 Properties <small>Control panel</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active"><a href="#">Property</a> </li>
             </ol>
         </section>
 
@@ -183,7 +183,7 @@
                                         <span class="label label-success">Apopka, FL </span>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-block btn-primary btn-xs view">View</button>
+                                        <button type="button" class="btn btn-block btn-primary btn-xs view" data-toggle="modal" data-target="#myModal">View</button>
                                     </td>
                                     <td>
                                         <button type="button" class="btn btn-block btn-danger btn-xs delete">Delete</button>
@@ -281,11 +281,32 @@
             Copyright &copy; 2016 <a href="file:///Users/erikanarvaez/Desktop/BoxEstates/index.html">BoxEstates</a>.</strong>
         All rights reserved.
     </footer>
-
-
-    <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+
+<!-- Modal -->
+<div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Article Title</h4>
+            </div>
+            <div class="modal-body">
+              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+                  ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                  Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
+                  Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+                  Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue,
+                  eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <a href="property_edit.html"><button type="button" class="btn btn-primary">Edit</button></a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>

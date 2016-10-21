@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
-    <title>Articles - BoxEstates</title>
+    <title>Agent | BoxEstates</title>
 
 
     <link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css">
@@ -51,8 +51,24 @@
                     ;
 
                     $('.ui.star.rating')
-                            .rating('enable')
+                            .rating('disable')
                     ;
+
+                    document.getElementById('review').addEventListener('click', function() {
+                        $('.ui.basic.review.modal')
+                                .modal({
+                                    blurring: true
+                                })
+                                .modal('show');
+                    }, false);
+
+                    document.getElementById('contact').addEventListener('click', function() {
+                        $('.ui.basic.contact.modal')
+                                .modal({
+                                    blurring: true
+                                })
+                                .modal('show');
+                    }, false);
 
                 })
         ;
@@ -71,7 +87,7 @@
         <div class="right menu">
             <div class="right item">
                 <a href="house_search.html" class="item" >Buy</a>
-                <a class="item">Sell</a>
+                <a href="sell.html" class="item">Sell</a>
                 <a active class="item">Agent Finder</a>
                 <a href="articles.html" class="item">Articles</a>
                 <div class="item">
@@ -97,7 +113,7 @@
 
                     <div class="right item">
                         <a href="house_search.html" class=" item">Buy</a>
-                        <a class="item">Sell</a>
+                        <a href="sell.html" class="item">Sell</a>
                         <a href="agent_finder.html" class="item">Agent Finder</a>
                         <a href="articles.html" class="item">Articles</a>
                         <a href="login.html" class="ui inverted button">Log in</a>
@@ -129,16 +145,16 @@
                     <div class="agent">
                         <img class="ui fluid medium image" src="assets/images/1.0_girl.jpg">
                         <div class="extra">
-                            Rating:<div class="ui huge star rating" data-rating="4"></div>
+                            Rating:<div class="ui huge star rating" data-rating="4" disabled=""></div>
                         </div>
                     </div>
                     <div class="ui divider"></div>
                     <div class="ui compact menu">
-                        <a class="item">
+                        <a class="item" id="review">
                             <i class="edit icon"></i>
                             Write a Review
                         </a>
-                        <a class="item">
+                        <a class="item" id="contact">
                             <i class="mail icon"></i>
                             Contact Info
                         </a>
@@ -179,32 +195,81 @@
         <div class="ui inverted vertical footer segment">
             <div class="ui container">
                 <div class="ui stackable inverted divided equal height stackable grid">
-                    <div class="three wide column">
-                        <h4 class="ui inverted header">About</h4>
-                        <div class="ui inverted link list">
-                            <a href="#" class="item">Sitemap</a>
-                            <a href="#" class="item">Contact Us</a>
-                            <a href="#" class="item">Charities</a>
-                        </div>
-                    </div>
-                    <div class="three wide column">
-                        <h4 class="ui inverted header">Services</h4>
-                        <div class="ui inverted link list">
-                            <a href="#" class="item">Brokers</a>
-                            <a href="#" class="item">Travelers</a>
-                            <a href="#" class="item">Home Owner</a>
-                            <a href="#" class="item">Purchaser</a>
-                        </div>
-                    </div>
-                    <div class="seven wide column">
-                        <h4 class="ui inverted header"></h4>
-                    </div>
                     <p class="bottom">@ 2016 BoxEstates</p>
 
                 </div>
             </div>
         </div>
 
+    </div>
+</div>
+
+<div class="ui basic review modal">
+    <i class="close icon"></i>
+    <div class="header">
+        <i class="write icon"></i> Write a Review
+    </div>
+    <div class="image content">
+        <div class="ui medium image">
+            <img src="assets/images/1.0_girl.jpg">
+        </div>
+        <div class="description">
+            <form class="ui form">
+                <div class="field">
+                    <label>Title</label>
+                    <input name="reviewTitle" type="text">
+                </div>
+                <div class="field">
+                    <label>Review</label>
+                    <textarea rows="2"></textarea>
+                </div>
+                <div class="field">
+                    Rating:<div class="ui huge star rating" data-rating="4"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui positive right labeled icon button">
+            Add Review
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+
+
+<div class="ui basic contact modal">
+    <i class="close icon"></i>
+    <div class="header">
+        <i class="comment icon"></i> Contact Form
+    </div>
+    <div class="content">
+        <div class="description">
+            <form class="ui form">
+                <div class="field">
+                    <label>First Name</label>
+                    <input name="first-name" placeholder="First Name" type="text">
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input name="last-name" placeholder="Last Name" type="text">
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input name="email" placeholder="Email" type="email">
+                </div>
+                <div class="field">
+                    <label>Message</label>
+                    <textarea rows="2"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui positive right labeled icon button">
+            Send Message
+            <i class="send icon"></i>
+        </div>
     </div>
 </div>
 
