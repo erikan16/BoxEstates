@@ -51,8 +51,24 @@
                     ;
 
                     $('.ui.star.rating')
-                            .rating('enable')
+                            .rating('disable')
                     ;
+
+                    document.getElementById('review').addEventListener('click', function() {
+                        $('.ui.basic.review.modal')
+                                .modal({
+                                    blurring: true
+                                })
+                                .modal('show');
+                    }, false);
+
+                    document.getElementById('contact').addEventListener('click', function() {
+                        $('.ui.basic.contact.modal')
+                                .modal({
+                                    blurring: true
+                                })
+                                .modal('show');
+                    }, false);
 
                 })
         ;
@@ -129,16 +145,16 @@
                     <div class="agent">
                         <img class="ui fluid medium image" src="assets/images/1.0_girl.jpg">
                         <div class="extra">
-                            Rating:<div class="ui huge star rating" data-rating="4"></div>
+                            Rating:<div class="ui huge star rating" data-rating="4" disabled=""></div>
                         </div>
                     </div>
                     <div class="ui divider"></div>
                     <div class="ui compact menu">
-                        <a class="item">
+                        <a class="item" id="review">
                             <i class="edit icon"></i>
                             Write a Review
                         </a>
-                        <a class="item">
+                        <a class="item" id="contact">
                             <i class="mail icon"></i>
                             Contact Info
                         </a>
@@ -185,6 +201,75 @@
             </div>
         </div>
 
+    </div>
+</div>
+
+<div class="ui basic review modal">
+    <i class="close icon"></i>
+    <div class="header">
+        <i class="write icon"></i> Write a Review
+    </div>
+    <div class="image content">
+        <div class="ui medium image">
+            <img src="assets/images/1.0_girl.jpg">
+        </div>
+        <div class="description">
+            <form class="ui form">
+                <div class="field">
+                    <label>Title</label>
+                    <input name="reviewTitle" type="text">
+                </div>
+                <div class="field">
+                    <label>Review</label>
+                    <textarea rows="2"></textarea>
+                </div>
+                <div class="field">
+                    Rating:<div class="ui huge star rating" data-rating="4"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui positive right labeled icon button">
+            Add Review
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+
+
+<div class="ui basic contact modal">
+    <i class="close icon"></i>
+    <div class="header">
+        <i class="comment icon"></i> Contact Form
+    </div>
+    <div class="content">
+        <div class="description">
+            <form class="ui form">
+                <div class="field">
+                    <label>First Name</label>
+                    <input name="first-name" placeholder="First Name" type="text">
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input name="last-name" placeholder="Last Name" type="text">
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input name="email" placeholder="Email" type="email">
+                </div>
+                <div class="field">
+                    <label>Message</label>
+                    <textarea rows="2"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui positive right labeled icon button">
+            Send Message
+            <i class="send icon"></i>
+        </div>
     </div>
 </div>
 

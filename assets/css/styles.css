@@ -511,6 +511,21 @@ h2.ui.header {
     margin-top: 35px;
 }
 
+/* Modal */
+
+.ui.basic.modal {
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.ui.basic.modal > .header, .description > p, .ui.form .field, .ui.modal > .close {
+    color: #000;
+}
+
+.ui.modal > .content > .image + .description {
+    width: 100%;
+}
+
 .object-fit_fill { object-fit: fill }
 .object-fit_contain { object-fit: contain }
 .object-fit_cover { object-fit: cover }
