@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('dashboardTitle', 'BoxEstates | Articles')
+@section('dashboardTitle', 'BoxEstates | Property')
 
 @section('stylesheet')
     <!-- SweetAlerts -->
@@ -9,20 +9,26 @@
 @endsection
 
 @section('breadcrumb')
-    <li class="active">Article</li>
+    <li class="active">Property</li>
 @endsection
 
 @section('content')
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Article Listing</h3>
-            <h2>Title: {{ $article->title }}</h2>
+            <h3 class="box-title">Property Listing</h3>
+            <h2>Title: {{ $property->title }}</h2>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
             <div class="row">
                 <div class="col-md-8">
-                    {!!html_entity_decode($article->description)!!}
+                    Address: {{ $property->address }}, {{ $property->state }} {{ $property->zipcode }}
+                    <br>
+                    Beds: {{ $property->beds }} | Baths: {{ $property->baths }} | Sq Feet: {{ $property->feet }}
+                    <br>
+                    Price: {{ $property->price }}
+                    <br><br>
+                    {!!html_entity_decode($property->description)!!}
                 </div>
                 <div class="col-md-4">
                     <div class="well">
@@ -32,12 +38,12 @@
                         {{--</dl>--}}
                         <dl class="dl-horizontal">
                             <label>Created:</label>
-                            {{ date("M j, Y h:ia", strtotime($article->created_at)) }}
+                            {{ date("M j, Y h:ia", strtotime($property->created_at)) }}
                         </dl>
                         <dl class="dl-horizontal">
                             <label>Updated:</label>
-                            @if ($article->updated_at)
-                            {{ date("M j, Y h:ia", strtotime($article->updated_at)) }}
+                            @if ($property->updated_at)
+                            {{ date("M j, Y h:ia", strtotime($property->updated_at)) }}
                             @else
                                 No Updates Recorded
                             @endif
@@ -45,10 +51,10 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-6">
-                                {!! Html::linkRoute('article.edit', 'Edit', array($article->id), array('class' => 'btn btn-primary btn-block')) !!}
+                                {!! Html::linkRoute('property.edit', 'Edit', array($property->id), array('class' => 'btn btn-primary btn-block')) !!}
                             </div>
                             <div class="col-sm-6">
-                                {!! Form::open(['route' => ['article.destroy', $article->id], 'method' => 'DELETE', 'class' => 'deleteArticle' ]) !!}
+                                {!! Form::open(['route' => ['property.destroy', $property->id], 'method' => 'DELETE', 'class' => 'deleteArticle' ]) !!}
                                 {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block delete']) !!}
                                 {!! Form::close() !!}
                             </div>
@@ -56,7 +62,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-12">
-                                {!! Html::linkRoute('article.index', 'All Posts', [], ['class' => 'btn btn-info btn-block btn-h1-spacing']) !!}
+                                {!! Html::linkRoute('property.index', 'All Posts', [], ['class' => 'btn btn-info btn-block btn-h1-spacing']) !!}
                             </div>
                         </div>
                     </div>

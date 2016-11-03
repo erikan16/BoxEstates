@@ -19,7 +19,9 @@
 
     <!-- Custom style -->
     <link rel="stylesheet" href="{{ asset('assets/css/dashboard_styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/AdminLTE.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/AdminLTE.min.css') }}">
+
+
 
     <!-- Parsley style -->
     <link  rel="stylesheet" href="{{ asset('assets/plugins/parsley/parsley.css') }}">
@@ -91,9 +93,9 @@
 <script>
     $.widget.bridge('uibutton', $.ui.button);
 </script>
-@yield('footerScripts')
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+@yield('footerScripts')
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{ asset('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
 <!-- Slimscroll -->

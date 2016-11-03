@@ -78,6 +78,7 @@
     <!-- DataTables -->
     <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
+
     <script>
         $(function () {
             $('#viewTable').DataTable({

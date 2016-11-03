@@ -11,23 +11,24 @@
 |
 */
 
-Route::get('pages/agent', function () {
-    return view('pages/agent');
-});
 
-Route::get('pages/article', function () {
-    return view('pages/article');
-});
 
-Route::get('pages/buy', function () {
-    return view('pages/buy');
-});
 
-Route::get('pages/sell', function () {
-    return view('pages/sell');
-});
+Route::get('pages/buy', 'PagesController@getBuy');
 
-Route::get('/', 'WelcomeController@getIndex');
+Route::get('pages/sell', 'PagesController@getSell');
+
+Route::get('pages/agent', 'PagesController@getAgent');
+
+Route::get('pages/article', 'PagesController@getArticle');
+
+Route::get('/', 'PagesController@getIndex');
+
+Route::resource('dashboard', 'DashboardController@getIndex');
+
+Route::resource('todo', 'TodoController');
 
 Route::resource('article', 'ArticleController');
+
+Route::resource('property', 'PropertyController');
 

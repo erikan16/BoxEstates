@@ -189,13 +189,14 @@
                     <div class="eight wide column">
 
                         <div class="ui three column grid">
+                            @foreach($properties as $property)
                             <div class="column">
                                 <div class="ui special card">
                                     <div class="blurring dimmable image">
                                         <div class="ui dimmer">
                                             <div class="content">
                                                 <div class="center">
-                                                    <h2 class="ui price header">$400,000</h2>
+                                                    <h2 class="ui price header">{{ $property->price }}</h2>
                                                     <a href="house_single.html">
                                                         <div class="ui inverted button">Show Property</div>
                                                     </a>
@@ -204,13 +205,10 @@
                                         </div>
                                         <img src="{{ asset('assets/images/1.0_buy.jpg') }}">
                                     </div>
-                                    <!--<div class="image">-->
-                                    <!--<img src="assets/images/girl.jpg">-->
-                                    <!--</div>-->
                                     <div class="content">
                                         <div class="ui red empty circular label"></div> For Sale
                                         <div class="meta">
-                                            <span class="date">3 bedrooms 2 baths <br> 2,987 sq ft</span>
+                                            <span class="date">{{ $property->beds }} bedrooms {{ $property->baths }} baths <br> {{ $property->feet }} sq ft</span>
                                         </div>
                                         <div class="description">
 
@@ -218,143 +216,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="column">
-                                <div class="ui special card">
-                                    <div class="blurring dimmable image">
-                                        <div class="ui dimmer">
-                                            <div class="content">
-                                                <div class="center">
-                                                    <h2 class="ui price header">$400,000</h2>
-                                                    <div class="ui inverted button">Show Property</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="{{ asset('assets/images/1.0_buy.jpg') }}">
-                                    </div>
-                                    <!--<div class="image">-->
-                                    <!--<img src="assets/images/girl.jpg">-->
-                                    <!--</div>-->
-                                    <div class="content">
-                                        <div class="ui red empty circular label"></div> For Sale
-                                        <div class="meta">
-                                            <span class="date">3 bedrooms 2 baths <br> 2,987 sq ft</span>
-                                        </div>
-                                        <div class="description">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="ui special card">
-                                    <div class="blurring dimmable image">
-                                        <div class="ui dimmer">
-                                            <div class="content">
-                                                <div class="center">
-                                                    <h2 class="ui price header">$400,000</h2>
-                                                    <div class="ui inverted button">Show Property</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="{{ asset('assets/images/1.0_buy.jpg') }}">
-                                    </div>
-                                    <!--<div class="image">-->
-                                    <!--<img src="assets/images/girl.jpg">-->
-                                    <!--</div>-->
-                                    <div class="content">
-                                        <div class="ui red empty circular label"></div> For Sale
-                                        <div class="meta">
-                                            <span class="date">3 bedrooms 2 baths <br> 2,987 sq ft</span>
-                                        </div>
-                                        <div class="description">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui three column grid">
-                            <div class="column">
-                                <div class="ui special card">
-                                    <div class="blurring dimmable image">
-                                        <div class="ui dimmer">
-                                            <div class="content">
-                                                <div class="center">
-                                                    <h2 class="ui price header">$400,000</h2>
-                                                    <div class="ui inverted button">Show Property</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="{{ asset('assets/images/1.0_buy.jpg') }}">
-                                    </div>
-                                    <!--<div class="image">-->
-                                    <!--<img src="assets/images/girl.jpg">-->
-                                    <!--</div>-->
-                                    <div class="content">
-                                        <div class="ui red empty circular label"></div> For Sale
-                                        <div class="meta">
-                                            <span class="date">3 bedrooms 2 baths <br> 2,987 sq ft</span>
-                                        </div>
-                                        <div class="description">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="ui special card">
-                                    <div class="blurring dimmable image">
-                                        <div class="ui dimmer">
-                                            <div class="content">
-                                                <div class="center">
-                                                    <h2 class="ui price header">$400,000</h2>
-                                                    <div class="ui inverted button">Show Property</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="{{ asset('assets/images/1.0_buy.jpg') }}">
-                                    </div>
-                                    <!--<div class="image">-->
-                                    <!--<img src="assets/images/girl.jpg">-->
-                                    <!--</div>-->
-                                    <div class="content">
-                                        <div class="ui red empty circular label"></div> For Sale
-                                        <div class="meta">
-                                            <span class="date">3 bedrooms 2 baths <br> 2,987 sq ft</span>
-                                        </div>
-                                        <div class="description">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="ui special card">
-                                    <div class="blurring dimmable image">
-                                        <div class="ui dimmer">
-                                            <div class="content">
-                                                <div class="center">
-                                                    <h2 class="ui price header">$400,000</h2>
-                                                    <div class="ui inverted button">Show Property</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="{{ asset('assets/images/1.0_buy.jpg') }}">
-                                    </div>
-                                    <!--<div class="image">-->
-                                    <!--<img src="assets/images/girl.jpg">-->
-                                    <!--</div>-->
-                                    <div class="content">
-                                        <div class="ui red empty circular label"></div> For Sale
-                                        <div class="meta">
-                                            <span class="date">3 bedrooms 2 baths <br> 2,987 sq ft</span>
-                                        </div>
-                                        <div class="description">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

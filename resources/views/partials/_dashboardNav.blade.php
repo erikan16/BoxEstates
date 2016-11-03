@@ -63,12 +63,12 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active">
-                <a href="#">
+            <li class="{{ Request::is('/') ? "active" : " " }}">
+                <a href="/dashboard">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
-            <li class="treeview">
+            <li class="treeview {{ Request::is('/') ? "active" : " " }}">
                 <a href="#">
                     <i class="fa fa-home"></i> <span>Properties</span>
                     <span class="pull-right-container">
@@ -76,15 +76,15 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active">
-                        <a href="#"><i class="fa fa-circle-o"></i> View All Post</a>
+                    <li class="{{ Request::is('/') ? "active" : " " }}">
+                        <a href="{{ route('property.index') }}"><i class="fa fa-circle-o"></i> View All Post</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-circle-o"></i>New Post</a>
+                    <li class="{{ Request::is('/') ? "active" : " " }}">
+                        <a href="{{ route('property.create') }}"><i class="fa fa-circle-o"></i>New Post</a>
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
+            <li class="treeview {{ Request::is('/') ? "active" : " " }}">
                 <a href="#">
                     <i class="fa fa-home"></i> <span>Articles</span>
                     <span class="pull-right-container">
@@ -92,11 +92,11 @@
         </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active">
-                        <a href="#"><i class="fa fa-circle-o"></i> View All Post</a>
+                    <li class="{{ Request::is('/') ? "active" : " " }}">
+                        <a href="{{ route('article.index') }}"><i class="fa fa-circle-o"></i> View All Post</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-circle-o"></i>New Post</a>
+                    <li class="{{ Request::is('/') ? "active" : " " }}">
+                        <a href="{{ route('article.create') }}"><i class="fa fa-circle-o"></i>New Post</a>
                     </li>
                 </ul>
             </li>

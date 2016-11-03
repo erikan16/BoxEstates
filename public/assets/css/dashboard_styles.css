@@ -1852,6 +1852,13 @@ a:focus {
     font-weight: 400;
 }
 
+.iconBtn {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
 /* Individual Styling*/
 
 .skin-blue .main-header .navbar .nav > li > a {
@@ -2032,3 +2039,5 @@ table.dataTable thead .noIcon.sorting::after{
     border: 1px solid #dddddd;
     padding: 10px;
 }
+
+a { color: #fff;}

@@ -30,4 +30,15 @@ return [
 
     'compiled' => realpath(storage_path('framework/views')),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Pagination View Path
+    |--------------------------------------------------------------------------
+    |
+    | Custom Pagination View
+    |
+    */
+
+    'pagination' => 'pagination.slider',
+
 ];

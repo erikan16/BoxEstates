@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('dashboardTitle', 'BoxEstates | Articles')
+@section('dashboardTitle', 'BoxEstates | Properties')
 
 @section('stylesheet')
     <!-- DataTables -->
@@ -12,20 +12,20 @@
 @endsection
 
 @section('breadcrumb')
-    <li class="active">Article</li>
+    <li class="active">Property</li>
 @endsection
 
 @section('content')
     <br>
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ route('article.create') }}" class="btn btn-warning pull-right">Create New Article</a>
+            <a href="{{ route('property.create') }}" class="btn btn-warning pull-right">Create New Property</a>
         </div>
     </div>
     <br>
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Current Articles</h3>
+            <h3 class="box-title">Current Properties</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -34,6 +34,7 @@
                     <tr>
                         <th>#</th>
                         <th>Title</th>
+                        <th>Address</th>
                         <th>Description</th>
                         <th>Date</th>
                         <th>Key Words</th>
@@ -41,27 +42,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($articles as $article)
-                        <tr>
-                            <td> {{ $article->id }} </td>
-                            <td> {{ $article->title }} </td>
-                            {{--<td> {{ substr($article->description, 0, 50) }}{{ strlen($article->description) > 50 ? "..." : "" }} </td>--}}
-                            <td> {!!html_entity_decode(substr($article->description, 0, 20))!!}{!!html_entity_decode(strlen($article->description) > 20 ? "..." : "" )!!}</td>
-                            <td> {{ date('m/j/y', strtotime($article->created_at)) }} </td>
-                            <td>
-                                <span class="label label-success">For Sale</span>
-                                <span class="label label-success">Apopka, FL </span>
-                            </td>
-                            <td>
-                                <a href="{{ route('article.show', $article->id) }}" class="btn btn-block btn-primary btn-sm view">View</a>
-                            </td>
-                        </tr>
-                    @endforeach
+                @foreach($properties as $property)
+                    <tr>
+                        <td> {{ $property->id }} </td>
+                        <td> {{ $property->title }} </td>
+                        <td>
+                            {{ $property->address }} , {{ $property->state }} {{ $property->zipcode }}
+                        </td>
+                        <td> {!!html_entity_decode(substr($property->description, 0, 20))!!}{!!html_entity_decode(strlen($property->description) > 20 ? "..." : "" )!!}</td>
+                        <td> {{ date('m/j/y', strtotime($property->created_at)) }} </td>
+                        <td>
+                            <span class="label label-success">For Sale</span>
+                            <span class="label label-success">Apopka, FL </span>
+                        </td>
+                        <td>
+                            <a href="{{ route('property.show', $property->id) }}" class="btn btn-block btn-primary btn-sm view">View</a>
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
                     <th>#</th>
                     <th>Title</th>
+                    <th>Address</th>
                     <th>Description</th>
                     <th>Date</th>
                     <th>Key Words</th>
@@ -78,6 +82,7 @@
     <!-- DataTables -->
     <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
+
     <script>
         $(function () {
             $('#viewTable').DataTable({

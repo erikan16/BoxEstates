@@ -306,41 +306,41 @@
                                 </div>
                             </td>
                             <td  class="userPosts">
-                                        <span>Show me posts by
-                                            <div class="ui inline posts dropdown">
-                                                <div class="text">
-                                                  <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                                  Jenny Hess
-                                                </div>
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                                        Jenny Hess
-                                                    </div>
-                                                    <div class="item">
-                                                        <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                                        Elliot Fu
-                                                    </div>
-                                                    <div class="item">
-                                                        <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                                        Stevie Feliciano
-                                                    </div>
-                                                    <div class="item">
-                                                        <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                                        Christian
-                                                    </div>
-                                                    <div class="item">
-                                                        <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                                        Matt
-                                                    </div>
-                                                    <div class="item">
-                                                        <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                                        Justen Kitsune
-                                                    </div>
-                                                </div>
+                                <span>Show me posts by
+                                    <div class="ui inline posts dropdown">
+                                        <div class="text">
+                                          <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
+                                          Jenny Hess
+                                        </div>
+                                        <i class="dropdown icon"></i>
+                                        <div class="menu">
+                                            <div class="item">
+                                                <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
+                                                Jenny Hess
                                             </div>
-                                        </span>
+                                            <div class="item">
+                                                <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
+                                                Elliot Fu
+                                            </div>
+                                            <div class="item">
+                                                <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
+                                                Stevie Feliciano
+                                            </div>
+                                            <div class="item">
+                                                <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
+                                                Christian
+                                            </div>
+                                            <div class="item">
+                                                <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
+                                                Matt
+                                            </div>
+                                            <div class="item">
+                                                <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
+                                                Justen Kitsune
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
                             </td>
                             <td class="tableBtn">
                                 <button class="ui medium button home fluid">Search</button>
@@ -377,19 +377,19 @@
             <div class="twelve middle aligned wide column">
                 <div class="ui container articleList">
                     <div class="ui relaxed divided items">
+                        @foreach($articles as $article)
                         <div class="item">
                             <div class="ui small image">
                                 <img src="{{ asset('assets/images/2.0_image_holder.png') }}">
                             </div>
                             <div class="content">
-                                <a class="header">Header 1</a>
+                                <a class="header">{{ $article->title }}</a>
                                 <div class="meta">
-                                    <a>Date</a>
+                                    <a>Date: {{ date('m/j/y', strtotime($article->created_at)) }}</a>
                                     <a>Category</a>
                                 </div>
                                 <div class="description">
-                                    Here we will place a description of the article and a button which will allow them
-                                    read the complete content.
+                                    {!!html_entity_decode(substr($article->description, 0, 110))!!}{!!html_entity_decode(strlen($article->description) > 110 ? "..." : "" )!!}
                                 </div>
                                 <div class="extra">
                                     <img src="{{ asset('assets/images/2.0_image_holder.png') }}" class="ui circular avatar image"> Who posted article
@@ -399,49 +399,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="ui small image">
-                                <img src="{{ asset('assets/images/2.0_image_holder.png') }}">
-                            </div>
-                            <div class="content">
-                                <a class="header">Header 2</a>
-                                <div class="meta">
-                                    <a>Date</a>
-                                    <a>Category</a>
-                                </div>
-                                <div class="description">
-                                    Here we will place a description of the article and a button which will allow them
-                                    read the complete content.                                </div>
-                                <div class="extra">
-                                    <div class="ui right floated primary button">
-                                        Read More
-                                        <i class="right chevron icon"></i>
-                                    </div>
-                                    <div class="ui label">We can also put special edition badges</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="ui small image">
-                                <img src="{{ asset('assets/images/2.0_image_holder.png') }}">
-                            </div>
-                            <div class="content">
-                                <a class="header">Header 3</a>
-                                <div class="meta">
-                                    <a>Date</a>
-                                    <a>Category</a>
-                                </div>
-                                <div class="description">
-                                    Here we will place a description of the article and a button which will allow them
-                                    read the complete content.                                </div>
-                                <div class="extra">
-                                    <div class="ui right floated primary button">
-                                        Read More
-                                        <i class="right chevron icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
