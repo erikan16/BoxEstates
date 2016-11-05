@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
 use Session;
 use App\Http\Requests;
 use App\Article;
@@ -14,6 +15,21 @@ use App\Article;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+
+        $this->middleware('auth');
+
+        // Only agents can access dashboard
+        if (Auth::user()->user_type == 'buyer/seller') {
+
+            Redirect::to('/')->send();
+
+        }
+
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +38,11 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        return view('article.index')->withArticles($articles);
+        return view('article.index', [
+
+            'user' => Auth::user()
+
+        ])->withArticles($articles);
     }
 
     /**
@@ -32,7 +52,11 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.create');
+        return view('article.create', [
+
+            'user' => Auth::user()
+
+        ]);
     }
 
     /**
@@ -52,6 +76,7 @@ class ArticleController extends Controller
 
         $article->title = $request->title;
         $article->description = $request->description;
+        $article->user_id = Auth::user()->id;
 
         $article->save();
 
@@ -69,7 +94,11 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::find($id);
-        return view('article.show')->withArticle($article);
+        return view('article.show', [
+
+            'user' => Auth::user()
+
+        ])->withArticle($article);
     }
 
     /**
@@ -82,7 +111,11 @@ class ArticleController extends Controller
     {
         $article = Article::find($id);
 
-        return view('article.edit')->withArticle($article);
+        return view('article.edit', [
+
+            'user' => Auth::user()
+
+        ])->withArticle($article);
     }
 
     /**

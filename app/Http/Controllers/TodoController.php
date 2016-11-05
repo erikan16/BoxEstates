@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
@@ -43,6 +46,9 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
+        /** @var User $user */
+        $user = Auth::user();
+
         $this->validate($request, array(
             'description' => 'required|max:50',
             'estimateTime' => 'required|max:20',
@@ -55,6 +61,7 @@ class TodoController extends Controller
         $todo->description = $request->description;
         $todo->estimateTime = $request->estimateTime;
         $todo->estimateValue = $request->estimateValue;
+        $todo->user_id = $user->getAttribute('id');
 
         $todo->save();
 

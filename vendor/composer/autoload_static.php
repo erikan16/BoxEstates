@@ -271,9 +271,15 @@ class ComposerStaticInitb6d5276fbf4e877a253db0606ddb1ba8
     );
 
     public static $classMap = array (
+        'AddDiscriminatorUser' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_162212_add_discriminator_user.php',
+        'AddForeignKeyTodoUsers' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_150228_add_foreign_key_todo_users.php',
+        'AddForeignUserToArticle' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_165156_add_foreign_user_to_article.php',
+        'ChangeNameTodoTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_145601_change_name_todo_table.php',
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_25_032656_create_articles_table.php',
+        'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_143919_create_comments_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePropertiesTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_02_182714_create_properties_table.php',
+        'CreateTableMessage' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_145814_create_table_message.php',
         'CreateTodoTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_02_224210_create_todo_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

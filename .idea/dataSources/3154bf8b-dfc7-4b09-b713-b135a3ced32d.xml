@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - @localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="21stcenturysafety">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="box_estates">
+      <visible>1</visible>
+    </schema>
+    <schema id="3" name="brain"/>
+    <schema id="4" name="brainlinked"/>
+    <schema id="5" name="budget_design"/>
+    <schema id="6" name="contingency_test"/>
+    <schema id="7" name="drsissy_wrdp1"/>
+    <schema id="8" name="fun"/>
+    <schema id="9" name="information_schema"/>
+    <schema id="10" name="laravel_play"/>
+    <schema id="11" name="learning"/>
+    <schema id="12" name="mybudget"/>
+    <schema id="13" name="mysql"/>
+    <schema id="14" name="notes"/>
+    <schema id="15" name="performance_schema"/>
+    <schema id="16" name="play"/>
+    <schema id="17" name="puppydate"/>
+    <schema id="18" name="simple_web_app"/>
+    <schema id="19" name="symfony"/>
+    <schema id="20" name="sym_admin"/>
+    <schema id="21" name="sym_mybudget"/>
+    <schema id="22" name="sym_safetygames"/>
+    <schema id="23" name="sym_safetynuggets"/>
+    <schema id="24" name="sym_stream"/>
+    <schema id="25" name="sym_toolboxtalks"/>
+    <schema id="26" name="sys"/>
+    <schema id="27" name="toolboxtalks"/>
+    <table id="28" parent="1" name="app_access"/>
+    <table id="29" parent="1" name="app_app"/>
+    <table id="30" parent="1" name="app_company"/>
+    <table id="31" parent="1" name="app_personal"/>
+    <table id="32" parent="1" name="app_trial"/>
+    <table id="33" parent="1" name="app_user"/>
+    <table id="34" parent="1" name="nug_answer"/>
+    <table id="35" parent="1" name="nug_category"/>
+    <table id="36" parent="1" name="nug_company_group"/>
+    <table id="37" parent="1" name="nug_delivery"/>
+    <table id="38" parent="1" name="nug_delivery_category"/>
+    <table id="39" parent="1" name="nug_employee"/>
+    <table id="40" parent="1" name="nug_employee_question"/>
+    <table id="41" parent="1" name="nug_question"/>
+    <table id="42" parent="1" name="nug_tag"/>
+    <table id="43" parent="1" name="nug_tag_employee"/>
+    <table id="44" parent="1" name="shr_category"/>
+    <table id="45" parent="1" name="shr_file"/>
+    <table id="46" parent="1" name="shr_video"/>
+    <table id="47" parent="2" name="migrations"/>
+    <table id="48" parent="2" name="articles"/>
+    <table id="49" parent="2" name="comments"/>
+    <table id="50" parent="2" name="messages"/>
+    <table id="51" parent="2" name="password_resets"/>
+    <table id="52" parent="2" name="properties"/>
+    <table id="53" parent="2" name="todos"/>
+    <table id="54" parent="2" name="users"/>
+    <column id="55" parent="28" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="56" parent="28" name="user_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="57" parent="28" name="app_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="58" parent="28" name="permission">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="59" parent="28" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="60" parent="28" name="IDX_E36A46D47987212D">
+      <columns>app_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="61" parent="28" name="IDX_E36A46D4A76ED395">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="62" parent="28" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="63" parent="28" name="FK_E36A46D4A76ED395">
+      <columns>user_id</columns>
+      <ref-key>~.app_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="64" parent="28" name="FK_E36A46D47987212D">
+      <columns>app_id</columns>
+      <ref-key>~.app_app.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="65" parent="29" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="66" parent="29" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="67" parent="29" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="68" parent="29" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="69" parent="30" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="70" parent="30" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="71" parent="30" name="address">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="72" parent="30" name="address2">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="73" parent="30" name="city">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="74" parent="30" name="state">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="75" parent="30" name="zip">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="76" parent="30" name="country">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="77" parent="30" name="phone">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="78" parent="30" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="79" parent="30" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="80" parent="31" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="81" parent="31" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="82" parent="31" name="first_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="83" parent="31" name="middle_name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="84" parent="31" name="last_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="85" parent="31" name="country">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="86" parent="31" name="address">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="87" parent="31" name="address2">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="88" parent="31" name="city">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="89" parent="31" name="state">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="90" parent="31" name="zip">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="91" parent="31" name="zip_extension">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="92" parent="31" name="phone">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="93" parent="31" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="94" parent="31" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="95" parent="32" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="96" parent="32" name="approval_admin_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="97" parent="32" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="98" parent="32" name="apps">
+      <comment>(DC2Type:json_array)</comment>
+      <mandatory>1</mandatory>
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="99" parent="32" name="followup_date">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="100" parent="32" name="admin_note">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="101" parent="32" name="user_comment">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="102" parent="32" name="approval_date">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="103" parent="32" name="expires">
+      <data-type>date|0</data-type>
+    </column>
+    <index id="104" parent="32" name="IDX_A271D3F2FB00260A">
+      <columns>approval_admin_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="105" parent="32" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="106" parent="32" name="FK_A271D3F2FB00260A">
+      <columns>approval_admin_id</columns>
+      <ref-key>~.app_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="107" parent="33" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="108" parent="33" name="personal_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="109" parent="33" name="company_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="110" parent="33" name="trial_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="111" parent="33" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="112" parent="33" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="113" parent="33" name="roles">
+      <comment>(DC2Type:json_array)</comment>
+      <mandatory>1</mandatory>
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="114" parent="33" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="115" parent="33" name="UNIQ_88BDF3E95596D5F7">
+      <columns>trial_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="116" parent="33" name="UNIQ_88BDF3E95D430949">
+      <columns>personal_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="117" parent="33" name="UNIQ_88BDF3E9979B1AD6">
+      <columns>company_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="118" parent="33" name="UNIQ_88BDF3E9F85E0677">
+      <columns>username</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="119" parent="33" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="120" parent="33" name="UNIQ_88BDF3E95D430949">
+      <columns>personal_id</columns>
+      <underlying-index>UNIQ_88BDF3E95D430949</underlying-index>
+    </key>
+    <key id="121" parent="33" name="UNIQ_88BDF3E9979B1AD6">
+      <columns>company_id</columns>
+      <underlying-index>UNIQ_88BDF3E9979B1AD6</underlying-index>
+    </key>
+    <key id="122" parent="33" name="UNIQ_88BDF3E95596D5F7">
+      <columns>trial_id</columns>
+      <underlying-index>UNIQ_88BDF3E95596D5F7</underlying-index>
+    </key>
+    <key id="123" parent="33" name="UNIQ_88BDF3E9F85E0677">
+      <columns>username</columns>
+      <underlying-index>UNIQ_88BDF3E9F85E0677</underlying-index>
+    </key>
+    <foreign-key id="124" parent="33" name="FK_88BDF3E95D430949">
+      <columns>personal_id</columns>
+      <ref-key>~.app_personal.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="125" parent="33" name="FK_88BDF3E9979B1AD6">
+      <columns>company_id</columns>
+      <ref-key>~.app_company.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="126" parent="33" name="FK_88BDF3E95596D5F7">
+      <columns>trial_id</columns>
+      <ref-key>~.app_trial.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="127" parent="34" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="128" parent="34" name="question_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="129" parent="34" name="answer">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="130" parent="34" name="correct">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="131" parent="34" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="132" parent="34" name="IDX_F23C01551E27F6BF">
+      <columns>question_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="133" parent="34" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="134" parent="34" name="FK_F23C01551E27F6BF">
+      <columns>question_id</columns>
+      <ref-key>~.nug_question.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="135" parent="35" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="136" parent="35" name="company_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="137" parent="35" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="138" parent="35" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="139" parent="35" name="IDX_C87DD0CE979B1AD6">
+      <columns>company_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="140" parent="35" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="141" parent="35" name="FK_C87DD0CE979B1AD6">
+      <columns>company_id</columns>
+      <ref-key>~.app_company.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="142" parent="36" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="143" parent="36" name="company_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="144" parent="36" name="delivery_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="145" parent="36" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="146" parent="36" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="147" parent="36" name="locations">
+      <comment>(DC2Type:json_array)</comment>
+      <data-type>longtext|0</data-type>
+    </column>
+    <index id="148" parent="36" name="IDX_D3F4A59A12136921">
+      <columns>delivery_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="149" parent="36" name="IDX_D3F4A59A979B1AD6">
+      <columns>company_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="150" parent="36" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="151" parent="36" name="FK_D3F4A59A979B1AD6">
+      <columns>company_id</columns>
+      <ref-key>~.app_company.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="152" parent="36" name="FK_D3F4A59A12136921">
+      <columns>delivery_id</columns>
+      <ref-key>~.nug_delivery.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="153" parent="37" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="154" parent="37" name="start_date">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="155" parent="37" name="end_date">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="156" parent="37" name="frequency">
+      <comment>(DC2Type:json_array)</comment>
+      <mandatory>1</mandatory>
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="157" parent="37" name="delivery_time">
+      <mandatory>1</mandatory>
+      <data-type>time|0</data-type>
+    </column>
+    <column id="158" parent="37" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="159" parent="37" name="company_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="160" parent="37" name="IDX_F9B0251F979B1AD6">
+      <columns>company_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="161" parent="37" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="162" parent="37" name="FK_F9B0251F979B1AD6">
+      <columns>company_id</columns>
+      <ref-key>~.app_company.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="163" parent="38" name="delivery_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="164" parent="38" name="question_category_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="165" parent="38" name="IDX_F88BBA4212136921">
+      <columns>delivery_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="166" parent="38" name="IDX_F88BBA42F142426F">
+      <columns>question_category_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="167" parent="38" name="PRIMARY">
+      <columns>delivery_id
+question_category_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="168" parent="38" name="FK_F88BBA4212136921">
+      <columns>delivery_id</columns>
+      <ref-key>~.nug_delivery.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="169" parent="38" name="FK_F88BBA42F142426F">
+      <columns>question_category_id</columns>
+      <ref-key>~.nug_category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="170" parent="39" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="171" parent="39" name="group_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="172" parent="39" name="first_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="173" parent="39" name="middle_name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="174" parent="39" name="last_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="175" parent="39" name="email">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="176" parent="39" name="phone">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="177" parent="39" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="178" parent="39" name="delivery_method">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;email&apos;</default-expression>
+    </column>
+    <column id="179" parent="39" name="unique_employee_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="180" parent="39" name="employee_unique_id">
+      <columns>unique_employee_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="181" parent="39" name="IDX_93AEBCAEFE54D947">
+      <columns>group_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="182" parent="39" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="183" parent="39" name="FK_93AEBCAEFE54D947">
+      <columns>group_id</columns>
+      <ref-key>~.nug_company_group.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="184" parent="40" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="185" parent="40" name="group_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="186" parent="40" name="delivery_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="187" parent="40" name="employee_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="188" parent="40" name="question_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="189" parent="40" name="selected_answer_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="190" parent="40" name="expires">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="191" parent="40" name="correct">
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="192" parent="40" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="193" parent="40" name="IDX_B96E5A6612136921">
+      <columns>delivery_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="194" parent="40" name="IDX_B96E5A661E27F6BF">
+      <columns>question_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="195" parent="40" name="IDX_B96E5A668C03F15C">
+      <columns>employee_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="196" parent="40" name="IDX_B96E5A66F24C5BEC">
+      <columns>selected_answer_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="197" parent="40" name="IDX_B96E5A66FE54D947">
+      <columns>group_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="198" parent="40" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="199" parent="40" name="FK_B96E5A66FE54D947">
+      <columns>group_id</columns>
+      <ref-key>~.nug_company_group.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="200" parent="40" name="FK_B96E5A6612136921">
+      <columns>delivery_id</columns>
+      <ref-key>~.nug_delivery.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="201" parent="40" name="FK_B96E5A668C03F15C">
+      <columns>employee_id</columns>
+      <ref-key>~.nug_employee.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="202" parent="40" name="FK_B96E5A661E27F6BF">
+      <columns>question_id</columns>
+      <ref-key>~.nug_question.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="203" parent="40" name="FK_B96E5A66F24C5BEC">
+      <columns>selected_answer_id</columns>
+      <ref-key>~.nug_answer.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="204" parent="41" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="205" parent="41" name="category_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="206" parent="41" name="question">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="207" parent="41" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="208" parent="41" name="IDX_78C6804112469DE2">
+      <columns>category_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="209" parent="41" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="210" parent="41" name="FK_78C6804112469DE2">
+      <columns>category_id</columns>
+      <ref-key>~.nug_category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="211" parent="42" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="212" parent="42" name="company_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="213" parent="42" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="214" parent="42" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="215" parent="42" name="IDX_59BEAE8C979B1AD6">
+      <columns>company_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="216" parent="42" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="217" parent="42" name="FK_59BEAE8C979B1AD6">
+      <columns>company_id</columns>
+      <ref-key>~.app_company.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="218" parent="43" name="tag_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="219" parent="43" name="employee_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="220" parent="43" name="IDX_17325BE68C03F15C">
+      <columns>employee_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="221" parent="43" name="IDX_17325BE6BAD26311">
+      <columns>tag_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="222" parent="43" name="PRIMARY">
+      <columns>tag_id
+employee_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="223" parent="43" name="FK_17325BE6BAD26311">
+      <columns>tag_id</columns>
+      <ref-key>~.nug_tag.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="224" parent="43" name="FK_17325BE68C03F15C">
+      <columns>employee_id</columns>
+      <ref-key>~.nug_employee.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="225" parent="44" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="226" parent="44" name="company_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="227" parent="44" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="228" parent="44" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="229" parent="44" name="IDX_FE2FFFBC979B1AD6">
+      <columns>company_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="230" parent="44" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="231" parent="44" name="FK_FE2FFFBC979B1AD6">
+      <columns>company_id</columns>
+      <ref-key>~.app_company.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="232" parent="45" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="233" parent="45" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="234" parent="45" name="file">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="235" parent="45" name="link">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="236" parent="45" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="237" parent="45" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="238" parent="46" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="239" parent="46" name="category_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="240" parent="46" name="files_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="241" parent="46" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="242" parent="46" name="file">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="243" parent="46" name="link">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="244" parent="46" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="245" parent="46" name="IDX_10E306A112469DE2">
+      <columns>category_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="246" parent="46" name="UNIQ_10E306A1A3E65B2F">
+      <columns>files_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="247" parent="46" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="248" parent="46" name="UNIQ_10E306A1A3E65B2F">
+      <columns>files_id</columns>
+      <underlying-index>UNIQ_10E306A1A3E65B2F</underlying-index>
+    </key>
+    <foreign-key id="249" parent="46" name="FK_10E306A112469DE2">
+      <columns>category_id</columns>
+      <ref-key>~.shr_category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="250" parent="46" name="FK_10E306A1A3E65B2F">
+      <columns>files_id</columns>
+      <ref-key>~.shr_file.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="251" parent="47" name="migration">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="252" parent="47" name="batch">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="253" parent="48" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="254" parent="48" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="255" parent="48" name="description">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="256" parent="48" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="257" parent="48" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="258" parent="48" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="259" parent="49" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="260" parent="49" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="261" parent="49" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="262" parent="49" name="commentator_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="263" parent="49" name="commentator_email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="264" parent="49" name="comment">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <key id="265" parent="49" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="266" parent="50" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="267" parent="50" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="268" parent="50" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="269" parent="50" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="270" parent="50" name="to_user">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+    </column>
+    <column id="271" parent="50" name="message">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <index id="272" parent="50" name="messages_to_user_foreign">
+      <columns>to_user</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="273" parent="50" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="274" parent="50" name="messages_to_user_foreign">
+      <columns>to_user</columns>
+      <ref-key>~.users.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="275" parent="51" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="276" parent="51" name="token">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="277" parent="51" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <index id="278" parent="51" name="password_resets_email_index">
+      <columns>email</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="279" parent="51" name="password_resets_token_index">
+      <columns>token</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <column id="280" parent="52" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="281" parent="52" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="282" parent="52" name="address">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="283" parent="52" name="state">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="284" parent="52" name="zipcode">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="285" parent="52" name="beds">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="286" parent="52" name="baths">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="287" parent="52" name="feet">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="288" parent="52" name="price">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="289" parent="52" name="description">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="290" parent="52" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="291" parent="52" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="292" parent="52" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="293" parent="53" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="294" parent="53" name="description">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="295" parent="53" name="estimateTime">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="296" parent="53" name="estimateValue">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="297" parent="53" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="298" parent="53" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="299" parent="53" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+    </column>
+    <index id="300" parent="53" name="todos_user_id_foreign">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="301" parent="53" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="302" parent="53" name="todos_user_id_foreign">
+      <columns>user_id</columns>
+      <ref-key>~.users.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="303" parent="54" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="304" parent="54" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="305" parent="54" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="306" parent="54" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="307" parent="54" name="remember_token">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="308" parent="54" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="309" parent="54" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="310" parent="54" name="users_email_unique">
+      <columns>email</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="311" parent="54" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="312" parent="54" name="users_email_unique">
+      <columns>email</columns>
+      <underlying-index>users_email_unique</underlying-index>
+    </key>
+  </database-model>
+</dataSource>

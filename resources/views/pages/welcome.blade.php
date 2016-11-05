@@ -17,7 +17,7 @@
                             <a href="pages/sell" class="item">Sell</a>
                             <a href="pages/agent" class="item">Agent Finder</a>
                             <a href="pages/article" class="item">Articles</a>
-                            <a href="" class="ui inverted button">Log in</a>
+                            <a href="/login" class="ui inverted button">Log in</a>
                             <!--<a class="ui inverted button">Sign Up</a>-->
                         </div>
                     </div>

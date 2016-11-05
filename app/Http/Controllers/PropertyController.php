@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Session;
 use App\Http\Requests;
 use App\Property;
@@ -14,6 +16,20 @@ use App\Property;
 
 class PropertyController extends Controller
 {
+    public function __construct()
+    {
+
+        $this->middleware('auth');
+
+        // Only agents can access dashboard
+        if (Auth::user()->user_type == 'buyer/seller') {
+
+            Redirect::to('/')->send();
+
+        }
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +38,11 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
-        return view('property.index')->withProperties($properties);
+        return view('property.index', [
+
+            'user' => Auth::user()
+
+        ])->withProperties($properties);
     }
 
     /**
@@ -32,7 +52,11 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('property.create');
+        return view('property.create', [
+
+            'user' => Auth::user()
+
+        ]);
     }
 
     /**
@@ -83,7 +107,11 @@ class PropertyController extends Controller
     public function show($id)
     {
         $property = Property::find($id);
-        return view('property.show')->withProperty($property);
+        return view('property.show', [
+
+            'user' => Auth::user()
+
+        ])->withProperty($property);
     }
 
     /**
@@ -96,7 +124,11 @@ class PropertyController extends Controller
     {
         $property = Property::find($id);
 
-        return view('property.edit')->withProperty($property);
+        return view('property.edit', [
+
+            'user' => Auth::user()
+
+        ])->withProperty($property);
     }
 
     /**

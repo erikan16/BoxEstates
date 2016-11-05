@@ -6,9 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddDiscriminatorUser' => $baseDir . '/database/migrations/2016_11_05_162212_add_discriminator_user.php',
+    'AddForeignKeyTodoUsers' => $baseDir . '/database/migrations/2016_11_05_150228_add_foreign_key_todo_users.php',
+    'AddForeignUserToArticle' => $baseDir . '/database/migrations/2016_11_05_165156_add_foreign_user_to_article.php',
+    'ChangeNameTodoTable' => $baseDir . '/database/migrations/2016_11_05_145601_change_name_todo_table.php',
     'CreateArticlesTable' => $baseDir . '/database/migrations/2016_10_25_032656_create_articles_table.php',
+    'CreateCommentsTable' => $baseDir . '/database/migrations/2016_11_05_143919_create_comments_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePropertiesTable' => $baseDir . '/database/migrations/2016_11_02_182714_create_properties_table.php',
+    'CreateTableMessage' => $baseDir . '/database/migrations/2016_11_05_145814_create_table_message.php',
     'CreateTodoTable' => $baseDir . '/database/migrations/2016_11_02_224210_create_todo_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',

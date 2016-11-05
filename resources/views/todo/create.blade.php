@@ -27,7 +27,7 @@
                 {{ Form::label('estimateTime', 'Estimate') }}
                 <div class="row">
                     <div class="col-md-5">
-                        {{ Form::number('estimateTime', null, array('class' => 'form-control input-md', 'maxlength' => '20'))
+                        {{ Form::number('estimateTime', null, array('class' => 'form-control input-md', 'maxle9ngth' => '20'))
                          }}
                     </div>
                     <div class="col-md-3">

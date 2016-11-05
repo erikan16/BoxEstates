@@ -32,3 +32,7 @@ Route::resource('article', 'ArticleController');
 
 Route::resource('property', 'PropertyController');
 
+
+Route::auth();
+
+//Route::get('/home', 'HomeController@index');
