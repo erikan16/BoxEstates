@@ -22,37 +22,87 @@
         <!-- /.box-header -->
         <div class="box-body pad">
             {!! Form::model($property, ['route' => ['property.update', $property->id], 'method' => 'PUT']) !!}
-            <div class="form-group">
-                {{ Form::label('title', 'Title') }}
-                {{ Form::text('title', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        {{ Form::label('title', 'Title') }}
+                        {{ Form::text('title', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ Form::label('price', 'Price') }}
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            {{ Form::text('price', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                {{ Form::label('address', 'Address') }}
-                {{ Form::text('address', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ Form::label('address', 'Address') }}
+                        {{ Form::text('address', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ Form::label('state', 'State') }}
+                        {{ Form::text('state', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ Form::label('zipcode', 'Zip Code') }}
+                        {{ Form::text('zipcode', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                {{ Form::label('state', 'State') }}
-                {{ Form::text('state', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ Form::label('beds', 'Beds') }}
+                        {{ Form::text('beds', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ Form::label('baths', 'Baths') }}
+                        {{ Form::text('baths', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ Form::label('feet', 'Sq Feet') }}
+                        {{ Form::text('feet', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                {{ Form::label('zipcode', 'Zip Code') }}
-                {{ Form::text('zipcode', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('beds', 'Beds') }}
-                {{ Form::text('beds', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('baths', 'Baths') }}
-                {{ Form::text('baths', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('feet', 'Sq Feet') }}
-                {{ Form::text('feet', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('price', 'Price') }}
-                {{ Form::text('price', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ Form::label('homeType', 'Home Type') }}
+                        {{ Form::select('homeType', [
+                           'house' => 'House',
+                           'apartment' => 'Apartment',
+                           'condo' => 'Condo',
+                           'townhouse' => 'Townhouse',
+                           'manufactured' => 'Manufactured',
+                           'land' => 'Land'] , null, array('class' => 'form-control input-md')) }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ Form::label('listingType', 'Listing Type') }}
+                        {{ Form::select('listingType', [
+                           'sale' => 'For Sale',
+                           'rent' => 'For Rent',
+                           'foreclosure' => 'Foreclosure'
+                          ] , null, array('class' => 'form-control input-md')) }}
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 {{ Form::label('description', 'Description') }}

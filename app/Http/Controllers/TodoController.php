@@ -18,6 +18,22 @@ use App\Todo;
 
 class TodoController extends Controller
 {
+
+    public function __construct()
+    {
+
+        $this->middleware('auth');
+
+        // Only agents can access dashboard
+        if (Auth::user()->user_type == 'buyer/seller') {
+
+            Redirect::to('/')->send();
+
+        }
+
+    }
+
+
     /**
      * Display a listing of the resource.
      *

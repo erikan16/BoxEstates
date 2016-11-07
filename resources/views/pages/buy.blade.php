@@ -196,7 +196,7 @@
                                         <div class="ui dimmer">
                                             <div class="content">
                                                 <div class="center">
-                                                    <h2 class="ui price header">{{ $property->price }}</h2>
+                                                    <h2 class="ui price header">${{ $property->price }}</h2>
                                                     <a href="house_single.html">
                                                         <div class="ui inverted button">Show Property</div>
                                                     </a>

@@ -23,6 +23,8 @@ class CreatePropertiesTable extends Migration
             $table->integer('feet');
             $table->integer('price');
             $table->text('description');
+            $table->string('homeType');
+            $table->string('listingType');
             $table->timestamps();
         });
     }

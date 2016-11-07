@@ -591,3 +591,17 @@ h2.ui.header {
     }
 }
 
+/* Login Page */
+
+.login-page, .register-page {
+    background: url("../images/san-francisco.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: inherit;
+}
+
+.login-box-body, .register-box-body {
+    box-shadow: 2px 4px 10px -3px rgba(102,102,102,1);
+}

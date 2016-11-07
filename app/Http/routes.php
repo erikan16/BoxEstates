@@ -32,6 +32,9 @@ Route::resource('article', 'ArticleController');
 
 Route::resource('property', 'PropertyController');
 
+//Route::get('password/rest/{token?}');
+//Route::post();
+//Route::post();
 
 Route::auth();
 

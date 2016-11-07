@@ -11,9 +11,6 @@ use App\Http\Requests;
 use App\Property;
 
 
-
-
-
 class PropertyController extends Controller
 {
     public function __construct()
@@ -76,7 +73,10 @@ class PropertyController extends Controller
             'baths' => 'required|max:2',
             'feet' => 'required|max:5',
             'price' => 'required|max:255',
-            'description' => 'required'
+            'description' => 'required',
+            'homeType' => 'required',
+            'listingType' => 'required'
+
         ));
 
         $property = new Property;
@@ -90,6 +90,8 @@ class PropertyController extends Controller
         $property->feet = $request->feet;
         $property->price = $request->price;
         $property->description = $request->description;
+        $property->homeType = $request->homeType;
+        $property->listingType = $request->listingType;
 
         $property->save();
 
@@ -149,7 +151,9 @@ class PropertyController extends Controller
             'baths' => 'required|max:2',
             'feet' => 'required|max:5',
             'price' => 'required|max:255',
-            'description' => 'required'
+            'description' => 'required',
+            'homeType' => 'required',
+            'listingType' => 'required'
         ));
 
         $property = Property::find($id);
@@ -163,6 +167,8 @@ class PropertyController extends Controller
         $property->feet = $request->input('feet');
         $property->price = $request->input('price');
         $property->description = $request->input('description');
+        $property->homeType = $request->input('homeType');
+        $property->listingType = $request->input('listingType');
 
         $property->save();
 
