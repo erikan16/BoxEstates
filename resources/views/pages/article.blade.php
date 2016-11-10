@@ -386,14 +386,14 @@
                                 <a class="header">{{ $article->title }}</a>
                                 <div class="meta">
                                     <a>Date: {{ date('m/j/y', strtotime($article->created_at)) }}</a>
-                                    <a>Category</a>
                                 </div>
                                 <div class="description">
                                     {!!html_entity_decode(substr($article->description, 0, 110))!!}{!!html_entity_decode(strlen($article->description) > 110 ? "..." : "" )!!}
                                 </div>
                                 <div class="extra">
-                                    <img src="{{ asset('assets/images/2.0_image_holder.png') }}" class="ui circular avatar image"> Who posted article
-                                    <a href="single_article.html">
+                                    <img src="{{ asset('assets/images/2.0_image_holder.png') }}" class="ui circular avatar image"> Author: {{ $article->getArticleAuthor()->name }}
+                                    <a href="{{ route('article.single', $article->slug) }}">
+                                    {{--<a href="#">--}}
                                         <div class="ui right floated primary button">Read More <i class="right chevron icon"></i></div>
                                     </a>
                                 </div>

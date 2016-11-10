@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -23,4 +24,36 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getDashboardComments($user_id)
+    {
+
+        $articles = Article::where('user_id', '=', $user_id)->get();
+
+        $comments = [];
+
+        foreach ($articles as $article) {
+
+            $article_comments = Comment::where('article_id', '=', $article->id)->get();
+            foreach ($article_comments as $comment) {
+
+                /** @var Comment $comment */
+                $comments[] = [
+
+                    'author' => $comment->getAuthor()->name,
+                    'comment' => $comment->comment,
+                    'created' => $comment->created_at,
+                    'article' => $article->title,
+                    'link' => '/pages/' . $article->slug
+
+
+                ];
+
+            }
+
+        }
+
+        return $comments;
+
+    }
 }

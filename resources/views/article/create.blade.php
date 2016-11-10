@@ -24,6 +24,14 @@
             <!-- /.box-header -->
             <div class="box-body pad">
                 {!! Form::open(array('route' => 'article.store', 'data-parsley-validate' => '')) !!}
+                    <div class="row">
+                        <div class="col-md-6 pull-right">
+                            <div class="form-group">
+                                {{ Form::label('slug', 'URL Slug') }}
+                                {{ Form::text('slug', null, array('class' => 'form-control input-md', 'minlength' => '5' ,'maxlength' => '40')) }}
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-group">
                         {{ Form::label('title', 'Title') }}
                         {{ Form::text('title', null, array('class' => 'form-control input-md', 'maxlength' => '100')) }}

@@ -10,13 +10,11 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
-use App\Todo;
+use App\Profile;
 
 
 
-
-
-class TodoController extends Controller
+class ProfileController extends Controller
 {
 
     public function __construct()
@@ -41,7 +39,9 @@ class TodoController extends Controller
      */
     public function index()
     {
-
+        return view('profile.index', [
+            'user' => Auth::user()
+        ]);
     }
 
     /**
@@ -51,11 +51,7 @@ class TodoController extends Controller
      */
     public function create()
     {
-        return view('todo.create', [
 
-            'user' => Auth::user()
-
-        ]);
     }
 
     /**
@@ -66,28 +62,6 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        /** @var User $user */
-        $user = Auth::user();
-
-        $this->validate($request, array(
-            'description' => 'required|max:50',
-            'estimateTime' => 'required|max:20',
-            'estimateValue' => 'required'
-
-        ));
-
-        $todo = new Todo();
-
-        $todo->description = $request->description;
-        $todo->estimateTime = $request->estimateTime;
-        $todo->estimateValue = $request->estimateValue;
-        $todo->user_id = $user->getAttribute('id');
-
-        $todo->save();
-
-        Session::flash('success', 'A new To Do item was saved successfully!');
-
-        return Redirect::to('/dashboard');
 
     }
 
@@ -111,12 +85,6 @@ class TodoController extends Controller
     public function edit($id)
     {
 
-        $todo = Todo::find($id);
-        return view('todo.edit', [
-
-            'user' => Auth::user()
-
-        ])->withTodo($todo);
     }
 
     /**
@@ -129,25 +97,6 @@ class TodoController extends Controller
     public function update(Request $request, $id)
     {
 
-        $this->validate($request, array(
-            'description' => 'required|max:50',
-            'estimateTime' => 'required|max:20',
-            'estimateValue' => 'required'
-        ));
-
-        $todo = Todo::find($id);
-
-        $todo->description = $request->input('description');
-        $todo->estimateTime = $request->input('estimateTime');
-        $todo->estimateValue = $request->input('estimateValue');
-
-        $todo->save();
-
-        Session::flash('success', 'This To Do item was successfully updated!');
-
-        //redirect
-//        return redirect()->route('article.show', $article->id);
-        return Redirect::to('/dashboard');
     }
 
     /**
@@ -158,12 +107,6 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        $todo = Todo::find($id);
 
-        $todo->delete();
-
-        Session::flash('success', 'To Do item was successfully deleted!');
-
-        return Redirect::to('/dashboard');
     }
 }

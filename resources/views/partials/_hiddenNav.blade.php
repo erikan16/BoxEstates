@@ -7,12 +7,20 @@
 
         <div class="right menu">
             <div class="right item">
-                <a href="{{'pages/buy'}}" class="{{ Request::is('buy') ? "active" : "" }}item">Buy</a>
-                <a href="{{'pages/sell'}}" class="item">Sell</a>
-                <a href="{{'pages/agent'}}" class="item">Agent Finder</a>
-                <a  href="{{'pages/article'}}" class="item">Articles</a>
+                <a href="{{'buy'}}" class="{{ Request::is('buy') ? "active" : "" }}item">Buy</a>
+                <a href="{{'sell'}}" class="item">Sell</a>
+                <a href="{{'agent'}}" class="item">Agent Finder</a>
+                <a  href="{{'article'}}" class="item">Articles</a>
                 <div class="item">
-                    <a href="{{'pages/welcome'}}" class="ui inverted button">Log in</a>
+                    @if (Auth::check())
+                        @if (Auth::user()->user_type === 'agent')
+                            <a href="/dashboard" class="ui inverted button">Dashboard</a>
+                        @else
+                            <a href="/logout" class="ui inverted button">Log Out</a>
+                        @endif
+                    @else
+                        <a href="/login" class="ui inverted button">Log In</a>
+                    @endif
                 </div>
 
             </div>

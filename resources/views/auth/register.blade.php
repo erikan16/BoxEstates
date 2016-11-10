@@ -15,7 +15,8 @@
                 {{ csrf_field() }}
 
                 <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <input id="name" type="text" class="form-control" name="name" placeholder="Full name" value="{{ old('name') }}">
+                    <label>Full Name</label>
+                    <input id="name" type="text" class="form-control" name="name" placeholder="First and Last Name" value="{{ old('name') }}">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     @if ($errors->has('name'))
                         <span class="help-block">
@@ -25,17 +26,19 @@
                 </div>
 
                 <div class="form-group has-feedback{{ $errors->has('user_type') ? ' has-error' : '' }}">
+                    <label>User Type</label>
                         {{ Form::select('user_type', ['agent' => 'Agent', 'buyer/seller' => 'Buyer / Seller'], null, array('class' => 'form-control')) }}
 
                         @if ($errors->has('user_type'))
                             <span class="help-block">
-                                        <strong>{{ $errors->first('user_type') }}</strong>
-                                    </span>
+                                <strong>{{ $errors->first('user_type') }}</strong>
+                            </span>
                         @endif
                 </div>
 
                 <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+                    <label>Email</label>
+                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="example: JohnSmith@google.com">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     @if ($errors->has('email'))
                         <span class="help-block">
@@ -45,7 +48,8 @@
                 </div>
 
                 <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input id="password" type="password" class="form-control" name="password">
+                    <label>Password</label>
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     @if ($errors->has('password'))
                         <span class="help-block">
@@ -55,6 +59,7 @@
                 </div>
 
                 <div class="form-group has-feedback{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                    <label>Password Confirmation</label>
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     @if ($errors->has('password_confirmation'))

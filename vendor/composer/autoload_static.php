@@ -78,6 +78,8 @@ class ComposerStaticInitb6d5276fbf4e877a253db0606ddb1ba8
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\' => 16,
         ),
         'C' => 
         array (
@@ -210,6 +212,14 @@ class ComposerStaticInitb6d5276fbf4e877a253db0606ddb1ba8
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+        ),
         'Collective\\Html\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravelcollective/html/src',
@@ -256,9 +266,25 @@ class ComposerStaticInitb6d5276fbf4e877a253db0606ddb1ba8
         ),
         'D' => 
         array (
+            'Doctrine\\DBAL\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
+            ),
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
             'Doctrine\\Common\\Inflector\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
+            'Doctrine\\Common\\Collections\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
+            'Doctrine\\Common\\Annotations\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
             ),
         ),
         'C' => 
@@ -274,11 +300,13 @@ class ComposerStaticInitb6d5276fbf4e877a253db0606ddb1ba8
         'AddDiscriminatorUser' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_162212_add_discriminator_user.php',
         'AddForeignKeyTodoUsers' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_150228_add_foreign_key_todo_users.php',
         'AddForeignUserToArticle' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_165156_add_foreign_user_to_article.php',
+        'AddSlugToUsers' => __DIR__ . '/../..' . '/database/migrations/2016_11_09_022828_add_slug_to_users.php',
         'ChangeNameTodoTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_145601_change_name_todo_table.php',
         'CreateArticleTagTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_06_212544_create_article_tag_table.php',
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_25_032656_create_articles_table.php',
-        'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_143919_create_comments_table.php',
+        'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_09_020634_create_comments_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateProfilesTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_10_040558_create_profiles_table.php',
         'CreatePropertiesTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_02_182714_create_properties_table.php',
         'CreateTableMessage' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_145814_create_table_message.php',
         'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_06_211352_create_tags_table.php',

@@ -6,6 +6,8 @@ use App\Todo;
 use Illuminate\Contracts\Auth\Authenticatable as User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use App\Comment;
+use App\Article;
 
 class DashboardController extends Controller {
 
@@ -25,16 +27,19 @@ class DashboardController extends Controller {
 
     public function getIndex() {
 
-        /** @var User $user */
+        /** @var \App\User $user */
         $user = Auth::user();
 
         $todos = ToDo::where('user_id', '=', $user->getAttribute('id'))->paginate(5);
 
+        $comments = $user->getDashboardComments($user->id);
+
         return view('dashboard.dashboard', [
 
-            'user' => $user
+            'user' => $user,
+//            'comments' => $comments
 
-        ])->withTodos($todos);
+        ])->withTodos($todos)->withComments($comments);
 
     }
 

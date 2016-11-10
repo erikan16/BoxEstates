@@ -27,70 +27,35 @@
                     <div class="box-header">
                         <i class="fa fa-comments-o"></i>
 
-                        <h3 class="box-title">Messages</h3>
-
-                        <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-                            <div class="btn-group" data-toggle="btn-toggle">
-                                <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
-                            </div>
-                        </div>
+                        <h3 class="box-title">Comments</h3>
                     </div>
                     <div class="box-body chat" id="chat-box">
                         <!-- chat item -->
+                        @foreach($comments as $comment)
                         <div class="item">
-                            <img src="{{ asset('assets/images/user4-128x128.jpg') }}" alt="user image" class="online">
+                            <img src="{{ asset('assets/images/guest_avatar.jpg') }}" alt="user image">
 
                             <p class="message">
-                                <a href="#" class="name">
-                                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
-                                    Mike Doe
+                                <a href="{{ $comment['link']  }}" class="name">
+                                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{ date('m/j/y', strtotime($comment['created'])) }}</small>
+                                    {{ $comment['author']  }} - {{ $comment['article'] }}
                                 </a>
-                                I would like to discuss information regarding selling my home or if renting is better.
-                                Please email me or call me back regarding a good time to speak. I have attached an image of my home. Thank you
+                                {{ $comment['comment'] }}
                             </p>
-                            <div class="attachment">
-                                <h4>Attachments:</h4>
+                            {{--<div class="attachment">--}}
+                                {{--<h4>Attachments:</h4>--}}
 
-                                <p class="filename">
-                                    home-image.jpg
-                                </p>
+                                {{--<p class="filename">--}}
+                                    {{--home-image.jpg--}}
+                                {{--</p>--}}
 
-                                <div class="pull-right">
-                                    <button type="button" class="btn btn-primary btn-sm btn-flat">Open</button>
-                                </div>
-                            </div>
+                                {{--<div class="pull-right">--}}
+                                    {{--<button type="button" class="btn btn-primary btn-sm btn-flat">Open</button>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <!-- /.attachment -->
                         </div>
-                        <!-- /.item -->
-                        <!-- chat item -->
-                        <div class="item">
-                            <img src="{{ asset('assets/images/user3-128x128.jpg') }}" alt="user image" class="offline">
-
-                            <p class="message">
-                                <a href="#" class="name">
-                                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
-                                    Alexander Pierce
-                                </a>
-                                I would like to discuss information regarding selling my home or if renting is better.
-                                Please email me or call me back regarding a good time to speak. Thank you!
-                            </p>
-                        </div>
-                        <!-- /.item -->
-                        <!-- chat item -->
-                        <div class="item">
-                            <img src="{{ asset('assets/images/user2-160x160.jpg') }}" alt="user image" class="offline">
-
-                            <p class="message">
-                                <a href="#" class="name">
-                                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
-                                    Susan Doe
-                                </a>
-                                I would like to discuss information regarding selling my home or if renting is better.
-                                Please email me or call me back regarding a good time to speak. Thank you!
-                            </p>
-                        </div>
+                        @endforeach
                         <!-- /.item -->
                     </div>
                     <!-- /.chat -->

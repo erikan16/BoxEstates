@@ -21,7 +21,7 @@
             {!! Form::open(array('route' => 'todo.store', 'data-parsley-validate' => '')) !!}
             <div class="form-group">
                 {{ Form::label('description', 'Item Listing') }}
-                {{ Form::text('description', null, array('class' => 'form-control input-md', 'maxlength' => '20')) }}
+                {{ Form::text('description', null, array('class' => 'form-control input-md', 'maxlength' => '50')) }}
             </div>
             <div class="form-group">
                 {{ Form::label('estimateTime', 'Estimate') }}

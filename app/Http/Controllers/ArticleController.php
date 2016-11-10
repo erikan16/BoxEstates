@@ -2,33 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Session;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Article;
-
-
-
 
 
 class ArticleController extends Controller
 {
     public function __construct()
     {
-
         $this->middleware('auth');
 
         // Only agents can access dashboard
         if (Auth::user()->user_type == 'buyer/seller') {
-
             Redirect::to('/')->send();
-
         }
-
     }
-
 
     /**
      * Display a listing of the resource.
@@ -37,12 +32,14 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+
+        $user = Auth::user();
+
+        $articles = Article::where('user_id', $user->id)->get();
+
         return view('article.index', [
-
             'user' => Auth::user()
-
-        ])->withArticles($articles);
+        ])->withArticles($articles);//->withAuthors($author);
     }
 
     /**
@@ -53,9 +50,7 @@ class ArticleController extends Controller
     public function create()
     {
         return view('article.create', [
-
             'user' => Auth::user()
-
         ]);
     }
 
@@ -67,15 +62,20 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        /** @var User $user */
+        $user = Auth::user();
+
         $this->validate($request, array(
             'title' => 'required|max:255',
-            'description' => 'required'
+            'description' => 'required',
+            'slug' => 'required|alpha_dash|min:5|max:40|unique:articles,slug'
         ));
 
         $article = new Article;
 
         $article->title = $request->title;
         $article->description = $request->description;
+        $article->slug = $request->slug;
         $article->user_id = Auth::user()->id;
 
         $article->save();
@@ -95,9 +95,7 @@ class ArticleController extends Controller
     {
         $article = Article::find($id);
         return view('article.show', [
-
             'user' => Auth::user()
-
         ])->withArticle($article);
     }
 
@@ -112,9 +110,7 @@ class ArticleController extends Controller
         $article = Article::find($id);
 
         return view('article.edit', [
-
             'user' => Auth::user()
-
         ])->withArticle($article);
     }
 
@@ -127,15 +123,29 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, array(
-            'title' => 'required|max:255',
-            'description' => 'required'
-        ));
+
+        $article = Article::find($id);
+
+
+        if ($request->input('slug') == $article->slug) {
+            $this->validate($request, array(
+                'title' => 'required|max:255',
+                'description' => 'required',
+            ));
+        } else {
+            $this->validate($request, array(
+                'title' => 'required|max:255',
+                'slug' => 'required|alpha_dash|min:5|max:40|unique:articles,slug',
+                'description' => 'required'
+            ));
+        }
 
         $article = Article::find($id);
 
         $article->title = $request->input('title');
         $article->description = $request->input('description');
+        $article->slug = $request->input('slug');
+        $article->user_id = Auth::user()->id;
 
         $article->save();
 

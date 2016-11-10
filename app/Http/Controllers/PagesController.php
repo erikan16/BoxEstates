@@ -8,7 +8,9 @@ use App\Property;
 class PagesController extends Controller {
 
     public function getIndex() {
+
         return view('pages.welcome');
+
     }
 
     public function getBuy() {

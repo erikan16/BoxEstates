@@ -26,10 +26,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="well">
-                        {{--<dl class="dl-horizontal">--}}
-                        {{--<label>URL:</label>--}}
-                        {{--<a href="{{ url('parent/'.$post->slug) }}">{{ url($post->slug) }}</a>--}}
-                        {{--</dl>--}}
+                        <dl class="dl-horizontal">
+                        <label>URL Slugs:</label>
+                        <a href="{{ url('pages/'.$article->slug) }}" target="blank">{{ url('pages/'.$article->slug) }}</a>
+                        </dl>
                         <dl class="dl-horizontal">
                             <label>Created:</label>
                             {{ date("M j, Y h:ia", strtotime($article->created_at)) }}

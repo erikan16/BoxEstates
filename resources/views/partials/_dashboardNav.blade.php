@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="/" class="logo">
+    <a href="{{ "/" }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><img class="img-responsive" src="{{ asset('assets/images/small_logo.png') }}"></span>
         <!-- logo for regular state and mobile devices -->
@@ -26,14 +26,14 @@
                             <img src="{{ asset('assets/images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                             <p>
-                                <?= $user->name ?> - Agent
+                                {{ $user->name }} - Agent
                                 <small>Member since <?= (new \DateTime($user->created_at))->format('M. jS Y') ?></small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="{{ route('profile.index') }}" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
                                 <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
@@ -56,7 +56,7 @@
                 <img src="{{ asset('assets/images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p> <?= $user->name ?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -81,6 +81,9 @@
                     </li>
                     <li class="{{ Request::is('/') ? "active" : " " }}">
                         <a href="{{ route('property.create') }}"><i class="fa fa-circle-o"></i>New Post</a>
+                    </li>
+                    <li class="{{ Request::is('/') ? "active" : " " }}">
+                        <a href="{{ route('tags.index') }}"><i class="fa fa-circle-o"></i>Tags</a>
                     </li>
                 </ul>
             </li>

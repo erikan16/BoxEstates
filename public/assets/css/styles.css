@@ -465,8 +465,14 @@ h2.ui.price {color: #fff;}
 .textWrapper {
     /*margin: 4% 5%;*/
     margin: 4% 5% 4% 0;
-    width: 85%
+}
 
+.ui.comments {
+    max-width: 100%;
+}
+
+.ui.form.reply {
+    width: 60%;
 }
 
 .ui.compact.menu > a {
@@ -605,3 +611,5 @@ h2.ui.header {
 .login-box-body, .register-box-body {
     box-shadow: 2px 4px 10px -3px rgba(102,102,102,1);
 }
+
+

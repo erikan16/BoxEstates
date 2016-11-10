@@ -11,31 +11,30 @@
 |
 */
 
-
-
+// Web Pages Routes
 
 Route::get('pages/buy', 'PagesController@getBuy');
-
 Route::get('pages/sell', 'PagesController@getSell');
-
 Route::get('pages/agent', 'PagesController@getAgent');
-
 Route::get('pages/article', 'PagesController@getArticle');
-
 Route::get('/', 'PagesController@getIndex');
 
+
+// Dashboard Pages Routes
+
 Route::resource('dashboard', 'DashboardController@getIndex');
-
+Route::resource('tags', 'TagController', ['except' => ['create']]);
+Route::get('pages/{slug}', ['as' => 'article.single', 'uses' => 'ArticleSingleController@getSingle'])
+    ->where('slug', '[\w\d\-\_]+');
 Route::resource('todo', 'TodoController');
-
 Route::resource('article', 'ArticleController');
-
 Route::resource('property', 'PropertyController');
+Route::resource('profile', 'ProfileController');
 
-//Route::get('password/rest/{token?}');
-//Route::post();
-//Route::post();
+
+// Comments
+Route::post('comments/{article_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
+
+// Authentication
 
 Route::auth();
-
-//Route::get('/home', 'HomeController@index');

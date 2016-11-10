@@ -15,19 +15,21 @@
 
                 <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
                     <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <div>
                     @if ($errors->has('email'))
-                        <span class="glyphicon glyphicon-envelope form-control-feedback">
+                        <span class="help-block">
                             <strong>{{ $errors->first('email') }}</strong>
                         </span>
                     @endif
+                    </div>
                 </div>
 
                 <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
                     <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     @if ($errors->has('password'))
-                        <span class="glyphicon glyphicon-lock form-control-feedback">
+                        <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
                         </span>
                     @endif
