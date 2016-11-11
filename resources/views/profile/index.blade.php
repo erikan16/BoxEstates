@@ -18,128 +18,7 @@
 @section('content')
     <!-- Main content -->
     <section class="content">
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="nav-tabs-custom">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
-                        <li><a href="#password" data-toggle="tab">Password</a></li>
-                        <li><a href="#avatar" data-toggle="tab">Avatar</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="active tab-pane" id="settings">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputName" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="brokerage" class="col-sm-2 control-label">Brokerage</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="brokerage" placeholder="Business Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="areas" class="col-sm-2 control-label">Areas Served</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="areas" placeholder="Areas Served">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
-
-                                    <div class="col-sm-10">
-                                        <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.tab-pane -->
-                        <div class=" tab-pane" id="password">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="newpassword" class="col-sm-2 control-label">New Password</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="newpassword" placeholder="New Password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="newpassword2" class="col-sm-2 control-label">Re-Enter New Password</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="newpassword2" placeholder="Re-Enter New Password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.tab-pane -->
-                        <div class="tab-pane" id="avatar">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <div class="col-sm-10">
-                                        <input type="file"  id="image">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger pull-right">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.tab-pane -->
-                    </div>
-                    <!-- /.tab-content -->
-                </div>
-                <!-- /.nav-tabs-custom -->
-            </div>
-            <!-- /.col -->
-        </div>
-        <!-- /.row -->
-
+        @foreach($profiles as $profile)
         <div class="row">
             <div class="col-md-3">
                 <!-- Profile Image -->
@@ -147,16 +26,19 @@
                     <div class="box-body box-profile">
                         <img class="profile-user-img img-responsive img-circle" src="{{ asset('assets/images/user2-160x160.jpg') }}" alt="User profile picture">
 
-                        <h3 class="profile-username text-center">Alexander Pierce</h3>
+                        <h3 class="profile-username text-center">{{ $profile->name }}</h3>
 
                         <p class="text-muted text-center">Real Estate Agent</p>
 
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
-                                <b>Ratings</b> <a class="pull-right">4 Stars</a>
+                                <b> <i class="fa fa-envelope" aria-hidden="true"></i> {{ $profile->email }}</b>
                             </li>
                             <li class="list-group-item">
-                                <b>Active Listings</b> <a class="pull-right">13</a>
+                                <b>Article Listings</b> <span class="pull-right">{{ $article->count() }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Property Listings</b>  <span class="pull-right">{{ $property->count() }}</span>
                             </li>
                         </ul>
                     </div>
@@ -172,23 +54,37 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <strong><i class="fa fa-book margin-r-5"></i>Company Name</strong>
+
+                                <p class="text-muted">
+                                    {{ $profile->company_name }}
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <strong><i class="fa fa-book margin-r-5"></i>Company Link</strong>
+
+                                <p class="text-muted">
+                                    {{ $profile->company_url }}
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                        </div>
+                        <hr>
+
+                        <strong><i class="fa fa-map-marker" aria-hidden="true"></i></i> Company Location</strong>
 
                         <p class="text-muted">
-                            B.A. in Business Management
+                            {{ $profile->city }},  {{ $profile->state }}
                         </p>
-
                         <hr>
-
-                        <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
-
-                        <p class="text-muted">Malibu, California</p>
-
-                        <hr>
-
                         <strong><i class="fa fa-file-text-o margin-r-5"></i> Experience</strong>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                        <p> {{ $profile->experience }}</p>
                     </div>
                     <!-- /.box-body -->
                 </div>
@@ -196,7 +92,21 @@
             </div>
             <!-- /.col -->
         </div>
+        @endforeach
 
+
+        <div class="row">
+            @if ($profiles !== null)
+                <div class="col-sm-6">
+                    {!! Html::linkRoute('profile.edit', 'Edit Profile', array($profile->id), array('class' => 'btn btn-primary btn-block')) !!}
+                </div>
+            @else
+
+                <div class="col-sm-6">
+                    <a href="{{ 'profile/create' }}" class="btn btn-primary btn-block">Create Profile</a>
+                </div>
+            @endif
+        </div>
     </section>
     <!-- /.content -->
 
