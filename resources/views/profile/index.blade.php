@@ -94,14 +94,13 @@
         </div>
         @endforeach
 
-
         <div class="row">
-            @if ($profiles !== null)
+            @if (false == empty($profile))
                 <div class="col-sm-6">
                     {!! Html::linkRoute('profile.edit', 'Edit Profile', array($profile->id), array('class' => 'btn btn-primary btn-block')) !!}
                 </div>
             @else
-
+                <h3> You are missing a Profile... why don't you create one.</h3>
                 <div class="col-sm-6">
                     <a href="{{ 'profile/create' }}" class="btn btn-primary btn-block">Create Profile</a>
                 </div>

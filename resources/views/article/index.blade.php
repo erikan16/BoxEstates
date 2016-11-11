@@ -36,7 +36,7 @@
                         <th>Title</th>
                         <th>Description</th>
                         <th>Date</th>
-                        <th>Key Words</th>
+                        <th>URL Link</th>
                         <th class="noIcon"></th>
                     </tr>
                 </thead>
@@ -64,7 +64,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Date</th>
-                    <th>Key Words</th>
+                    <th>URL Link</th>
                     <th></th>
                 </tr>
                 </tfoot>

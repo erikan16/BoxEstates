@@ -11,6 +11,8 @@ use Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Profile;
+use App\Property;
+use App\Article;
 
 
 
@@ -24,11 +26,8 @@ class ProfileController extends Controller
 
         // Only agents can access dashboard
         if (Auth::user()->user_type == 'buyer/seller') {
-
             Redirect::to('/')->send();
-
         }
-
     }
 
 
@@ -39,9 +38,16 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+        $profile = Profile::where('user_id', $user->id)->get();
+        $article = Article::where('user_id', $user->id)->get();
+        $property = Property::where('user_id', $user->id)->get();
+
+
         return view('profile.index', [
             'user' => Auth::user()
-        ]);
+        ])->withProfiles($profile)->withArticle($article)->withProperty($property);
+
     }
 
     /**
@@ -51,7 +57,9 @@ class ProfileController extends Controller
      */
     public function create()
     {
-
+        return view('profile.create', [
+            'user' => Auth::user()
+        ]);
     }
 
     /**
@@ -62,7 +70,34 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, array(
+            'name' => 'required|max:255',
+            'email' => 'required',
+            'company_name' => 'required',
+            'company_url' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'experience' => 'required'
+        ));
 
+        $profile = new Profile;
+
+        $profile->name = $request->name;
+        $profile->email = $request->email;
+        $profile->company_name = $request->company_name;
+        $profile->company_url = $request->company_url;
+        $profile->city = $request->city;
+        $profile->state = $request->state;
+        $profile->experience = $request->experience;
+        $profile->user_id = Auth::user()->id;
+
+        $profile->save();
+
+        Session::flash('success', 'Profile was saved successfully!');
+
+        return view('profile.index', [
+            'user' => Auth::user()
+        ]);
     }
 
     /**
@@ -84,7 +119,11 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
+        $profile = Profile::find($id);
 
+        return view('profile.edit', [
+            'user' => Auth::user()
+        ])->withProfile($profile);
     }
 
     /**
@@ -96,7 +135,35 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, array(
+            'name' => 'required|max:255',
+            'email' => 'required',
+            'company_name' => 'required',
+            'company_url' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'experience' => 'required'
+        ));
 
+        $profile = Profile::find($id);
+
+        $profile->name = $request->name;
+        $profile->email = $request->email;
+        $profile->company_name = $request->company_name;
+        $profile->company_url = $request->company_url;
+        $profile->city = $request->city;
+        $profile->state = $request->state;
+        $profile->experience = $request->experience;
+        $profile->user_id = Auth::user()->id;
+
+        $profile->save();
+
+        Session::flash('success', 'Profile was updated successfully!');
+
+        return redirect()->route('profile.index', $profile->id);
+//        return view('profile.index', [
+//            'user' => Auth::user()
+//        ]);
     }
 
     /**

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Comment;
 use App\Article;
 
+
 class DashboardController extends Controller {
 
     public function __construct()
@@ -30,7 +31,7 @@ class DashboardController extends Controller {
         /** @var \App\User $user */
         $user = Auth::user();
 
-        $todos = ToDo::where('user_id', '=', $user->getAttribute('id'))->paginate(5);
+        $todos = Todo::where('user_id', '=', $user->getAttribute('id'))->paginate(5);
 
         $comments = $user->getDashboardComments($user->id);
 

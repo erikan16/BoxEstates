@@ -18,10 +18,4 @@ class Article extends Model
 
     }
 
-    public function getComments()
-    {
-
-
-
-    }
 }

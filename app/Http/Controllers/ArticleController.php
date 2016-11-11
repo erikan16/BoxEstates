@@ -62,9 +62,6 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        /** @var User $user */
-        $user = Auth::user();
-
         $this->validate($request, array(
             'title' => 'required|max:255',
             'description' => 'required',

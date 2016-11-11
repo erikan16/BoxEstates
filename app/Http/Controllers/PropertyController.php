@@ -34,7 +34,9 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = Property::all();
+        $user = Auth::user();
+        $properties = Property::where('user_id', $user->id)->get();
+
         return view('property.index', [
 
             'user' => Auth::user()
@@ -92,7 +94,7 @@ class PropertyController extends Controller
         $property->description = $request->description;
         $property->homeType = $request->homeType;
         $property->listingType = $request->listingType;
-
+        $property->user_id = Auth::user()->id;
         $property->save();
 
         Session::flash('success', 'Property was saved successfully!');
@@ -169,7 +171,7 @@ class PropertyController extends Controller
         $property->description = $request->input('description');
         $property->homeType = $request->input('homeType');
         $property->listingType = $request->input('listingType');
-
+        $property->user_id = Auth::user()->id;
         $property->save();
 
         Session::flash('success', 'This property was successfully updated!');
@@ -187,7 +189,6 @@ class PropertyController extends Controller
     public function destroy($id)
     {
         $property = Property::find($id);
-
         $property->delete();
 
         Session::flash('success', 'This property was successfully deleted!');
