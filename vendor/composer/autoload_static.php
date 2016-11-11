@@ -320,6 +320,7 @@ class ComposerStaticInitb6d5276fbf4e877a253db0606ddb1ba8
         'AddForeignKeyTodoUsers' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_150228_add_foreign_key_todo_users.php',
         'AddForeignUserToArticle' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_165156_add_foreign_user_to_article.php',
         'AddSlugToUsers' => __DIR__ . '/../..' . '/database/migrations/2016_11_09_022828_add_slug_to_users.php',
+        'AddUserIdToProfiles' => __DIR__ . '/../..' . '/database/migrations/2016_11_11_171247_add_user_id_to_profiles.php',
         'ChangeNameTodoTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_05_145601_change_name_todo_table.php',
         'CreateArticleTagTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_06_212544_create_article_tag_table.php',
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_25_032656_create_articles_table.php',
