@@ -23,6 +23,7 @@ class CreateProfilesTable extends Migration
             $table->text('experience');
             $table->string('image')->nullable();
             $table->timestamps();
+
         });
     }
 
