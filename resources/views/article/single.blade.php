@@ -27,11 +27,7 @@
             <div class="five wide computer seven wide tablet fifteen wide mobile column">
                 <div class="ui relaxed divided list">
                     <div class="item">
-                        @if (false == empty($profile->image))
-                            <img class="ui avatar image" src="{{ asset('images/' . $profile->image) }}">
-                        @else
-                            <img class="ui avatar image" src="{{ asset('assets/images/guest_avatar.jpg') }}">
-                        @endif
+                        <img src="{{ asset('images/' . $article->getAuthorImage()) }}" class="ui avatar image">
 
                         <!--<i class="large github middle aligned icon"></i>-->
                         <div class="content">

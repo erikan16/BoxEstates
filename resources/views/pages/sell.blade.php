@@ -112,19 +112,22 @@
                 </div>
             </div>
 
+                @include('partials._messages')
+
             <div class="ui text container">
                 <h1 class="ui inverted header sell">Learn how we can help</h1>
                 <h2>Let us get in contact with you.</h2>
-                <form class="ui form sell" action="{{ url('sell') }}" method="POST">
+                <form class="ui form sell" action="{{ url('pages/sell') }}" method="POST">
+                    {{ csrf_field() }}
                     <!-- Name and Address -->
                     <div class="field">
                         <label>Name</label>
                         <div class="two fields">
                             <div class="field">
-                                <input type="text" name="first-name" placeholder="First Name">
+                                <input type="text" name="firstName" placeholder="First Name">
                             </div>
                             <div class="field">
-                                <input type="text" name="last-name" placeholder="Last Name">
+                                <input type="text" name="lastName" placeholder="Last Name">
                             </div>
                         </div>
                     </div>
@@ -457,7 +460,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="ui large button">Learn More <i class="arrow right icon"></i></button>
+                    <button type="submit" class="ui large button"><i class="mail icon"></i> Send Message</button>
                 </form>
 
             </div>

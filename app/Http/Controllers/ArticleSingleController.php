@@ -20,7 +20,6 @@ class ArticleSingleController extends Controller
     public function getSingle($slug){
 
         $user = Auth::user();
-        $profile = Profile::where('user_id', $user->id)->first();
         $logginIn = null !== $user;
 
         $article = Article::where('slug', '=', $slug)->first();
@@ -28,8 +27,7 @@ class ArticleSingleController extends Controller
         return view ('article.single', [
 
             'user' => Auth::user(),
-            'loggedIn' => $logginIn,
-            'profile' => $profile
+            'loggedIn' => $logginIn
 
         ])->withArticle($article);
     }

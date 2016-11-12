@@ -8,7 +8,10 @@ use App\Http\Requests;
 use App\Article;
 use App\Property;
 use App\Profile;
+use Mail;
+use Session;
 use Illuminate\Support\Facades\Auth;
+
 
 class PagesController extends Controller {
 
@@ -30,19 +33,19 @@ class PagesController extends Controller {
     public function postSell(Request $request) {
 
         $this->validate($request,[
-            'first-name' => 'required',
-            'last-name' => 'required',
+            'firstName' => 'required',
+            'lastName' => 'required',
             'address' => 'required',
             'address-2' => 'sometimes',
-            'state' => 'sometimes',
+            'state' => 'required',
             'country' => 'required',
             'email' => 'required|email'
 
         ]);
 
         $data = array(
-            'firstName' => $request->first-name,
-            'lastName' => $request->last-name,
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName,
             'address' => $request->address,
             'address2' => $request->address-2,
             'state' => $request->state,
@@ -55,6 +58,10 @@ class PagesController extends Controller {
             $message->to('admin@boxestates.info');
             $message->subject('BoxEstates Learn More');
         });
+
+        Session::flash('successMail', 'Your Email was Sent!');
+
+        return redirect('pages/sell');
     }
 
     public function getAgent() {
@@ -67,5 +74,6 @@ class PagesController extends Controller {
 //            'profile_image' => Article::with('getAuthorImage')->get()
         ])->withArticles($articles);
     }
+
 
 }

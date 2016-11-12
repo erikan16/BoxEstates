@@ -401,7 +401,9 @@
                                     {!!html_entity_decode(substr($article->description, 0, 110))!!}{!!html_entity_decode(strlen($article->description) > 110 ? "..." : "" )!!}
                                 </div>
                                 <div class="extra">
-                                    <img src="{{ asset('assets/images/2.0_image_holder.png') }}" class="ui circular avatar image"> Author: {{ $article->getArticleAuthor()->name }}
+                                    <img src="{{ asset('images/' . $article->getAuthorImage()) }}" class="ui circular avatar image">
+                                    {{--<img src="{{ asset('assets/images/2.0_image_holder.png') }}" class="ui circular avatar image"> --}}
+                                    Author: {{ $article->getArticleAuthor()->name }}
                                     <a href="{{ route('article.single', $article->slug) }}">
                                     {{--<a href="#">--}}
                                         <div class="ui right floated primary button">Read More <i class="right chevron icon"></i></div>

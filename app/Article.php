@@ -23,11 +23,15 @@ class Article extends Model
 
     public function getAuthorImage(){
 
-//        return  User::find($this->user_id);
-//        return $this->belongsTo('App\Profile');
+        $profile = Profile::where('user_id', $this->user_id)->first();
 
-        $profile_picture = User::where($this->user_id, Profile::find('user_id'));
+        if (null == $profile) {
 
-        return $profile_picture;
+            return 'default.jpg';
+
+        } else {
+
+            return $profile->image;
+        }
     }
 }

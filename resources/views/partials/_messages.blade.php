@@ -6,6 +6,14 @@
 
 @endif
 
+@if (Session::has('successMail'))
+
+    <div style="background: darkseagreen; padding: 20px 0;" role="alert">
+        <strong>Success:</strong> {{ Session::get('successMail') }}
+    </div>
+
+@endif
+
 @if (count($errors) > 0)
 
     <div class="alert alert-danger" role="alert">
