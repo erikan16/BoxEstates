@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use App\Profile;
 
 class ArticleSingleController extends Controller
 {
@@ -19,14 +20,16 @@ class ArticleSingleController extends Controller
     public function getSingle($slug){
 
         $user = Auth::user();
-
+        $profile = Profile::where('user_id', $user->id)->first();
         $logginIn = null !== $user;
 
         $article = Article::where('slug', '=', $slug)->first();
 
         return view ('article.single', [
 
-            'loggedIn' => $logginIn
+            'user' => Auth::user(),
+            'loggedIn' => $logginIn,
+            'profile' => $profile
 
         ])->withArticle($article);
     }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Comment;
 use App\Article;
+use App\Profile;
 
 
 class DashboardController extends Controller {
@@ -30,14 +31,14 @@ class DashboardController extends Controller {
 
         /** @var \App\User $user */
         $user = Auth::user();
-
         $todos = Todo::where('user_id', '=', $user->getAttribute('id'))->paginate(5);
-
         $comments = $user->getDashboardComments($user->id);
+        $profile = Profile::where('user_id', $user->id)->first();
 
         return view('dashboard.dashboard', [
 
             'user' => $user,
+            'profile' => $profile,
 //            'comments' => $comments
 
         ])->withTodos($todos)->withComments($comments);

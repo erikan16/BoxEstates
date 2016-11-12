@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use  App\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\Storage as Storage;
+use Illuminate\Support\Facades\File as File;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Profile;
 use App\Property;
 use App\Article;
+use Intervention\Image\ImageManagerStatic as Image;
 
 
 
@@ -77,7 +80,8 @@ class ProfileController extends Controller
             'company_url' => 'required',
             'city' => 'required',
             'state' => 'required',
-            'experience' => 'required'
+            'experience' => 'required',
+            'image' => 'sometimes|image'
         ));
 
         $profile = new Profile;
@@ -91,13 +95,24 @@ class ProfileController extends Controller
         $profile->experience = $request->experience;
         $profile->user_id = Auth::user()->id;
 
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/' . $filename);
+
+            Image::make($image)->resize(650, 650)->save($location);
+
+            $profile->image = $filename;
+        }
+
         $profile->save();
 
         Session::flash('success', 'Profile was saved successfully!');
 
-        return view('profile.index', [
-            'user' => Auth::user()
-        ]);
+//        return view('profile.index', [
+//            'user' => Auth::user()
+//        ]);
+        return redirect()->route('profile.index');
     }
 
     /**
@@ -142,7 +157,8 @@ class ProfileController extends Controller
             'company_url' => 'required',
             'city' => 'required',
             'state' => 'required',
-            'experience' => 'required'
+            'experience' => 'required',
+            'image' => 'image'
         ));
 
         $profile = Profile::find($id);
@@ -155,6 +171,20 @@ class ProfileController extends Controller
         $profile->state = $request->state;
         $profile->experience = $request->experience;
         $profile->user_id = Auth::user()->id;
+
+        if ($request->hasFile('image')) {
+
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/' . $filename);
+            Image::make($image)->resize(650, 650)->save($location);
+
+            $oldFilename = $profile->image;
+
+            $profile->image = $filename;
+
+            File::delete(public_path('images/'. $oldFilename));
+        }
 
         $profile->save();
 

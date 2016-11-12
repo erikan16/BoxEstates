@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Session;
 use App\Http\Requests;
 use App\Property;
+use App\Profile;
 
 
 class PropertyController extends Controller
@@ -36,10 +37,12 @@ class PropertyController extends Controller
     {
         $user = Auth::user();
         $properties = Property::where('user_id', $user->id)->get();
+        $profile = Profile::where('user_id', $user->id)->first();
 
         return view('property.index', [
 
-            'user' => Auth::user()
+            'user' => Auth::user(),
+            'profile' => $profile
 
         ])->withProperties($properties);
     }
@@ -51,9 +54,13 @@ class PropertyController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
+        $profile = Profile::where('user_id', $user->id)->first();
+
         return view('property.create', [
 
-            'user' => Auth::user()
+            'user' => Auth::user(),
+            'profile' => $profile
 
         ]);
     }

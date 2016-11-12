@@ -14,6 +14,7 @@
 // Web Pages Routes
 
 Route::get('pages/buy', 'PagesController@getBuy');
+Route::post('pages/sell', 'PagesController@postSell');
 Route::get('pages/sell', 'PagesController@getSell');
 Route::get('pages/agent', 'PagesController@getAgent');
 Route::get('pages/article', 'PagesController@getArticle');

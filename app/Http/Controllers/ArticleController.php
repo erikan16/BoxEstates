@@ -11,6 +11,7 @@ use Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Article;
+use App\Profile;
 
 
 class ArticleController extends Controller
@@ -34,11 +35,12 @@ class ArticleController extends Controller
     {
 
         $user = Auth::user();
-
+        $profile = Profile::where('user_id', $user->id)->first();
         $articles = Article::where('user_id', $user->id)->get();
 
         return view('article.index', [
-            'user' => Auth::user()
+            'user' => $user,
+            'profile' => $profile
         ])->withArticles($articles);//->withAuthors($author);
     }
 
@@ -49,8 +51,13 @@ class ArticleController extends Controller
      */
     public function create()
     {
+
+        $user = Auth::user();
+        $profile = Profile::where('user_id', $user->id)->first();
+
         return view('article.create', [
-            'user' => Auth::user()
+            'user' => $user,
+            'profile' => $profile
         ]);
     }
 
@@ -91,8 +98,13 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::find($id);
+        $user = Auth::user();
+        $profile = Profile::where('user_id', $user->id)->first();
+
         return view('article.show', [
-            'user' => Auth::user()
+            'user' => $user,
+            'profile' => $profile
+
         ])->withArticle($article);
     }
 
@@ -104,10 +116,13 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
+        $user = Auth::user();
+        $profile = Profile::where('user_id', $user->id)->first();
         $article = Article::find($id);
 
         return view('article.edit', [
-            'user' => Auth::user()
+            'user' => $user,
+            'profile' => $profile
         ])->withArticle($article);
     }
 
@@ -124,18 +139,18 @@ class ArticleController extends Controller
         $article = Article::find($id);
 
 
-        if ($request->input('slug') == $article->slug) {
+//        if ($request->input('slug') == $article->slug) {
+//            $this->validate($request, array(
+//                'title' => 'required|max:255',
+//                'description' => 'required',
+//            ));
+//        } else {
             $this->validate($request, array(
                 'title' => 'required|max:255',
-                'description' => 'required',
-            ));
-        } else {
-            $this->validate($request, array(
-                'title' => 'required|max:255',
-                'slug' => 'required|alpha_dash|min:5|max:40|unique:articles,slug',
+                'slug' => "required|alpha_dash|min:5|max:40|unique:articles,slug,$id",
                 'description' => 'required'
             ));
-        }
+//        }
 
         $article = Article::find($id);
 

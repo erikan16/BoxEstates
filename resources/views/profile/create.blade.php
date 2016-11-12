@@ -18,19 +18,28 @@
 @section('content')
     <!-- Main content -->
     <section class="content">
-
+        {!! Form::open(array('route' => 'profile.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+        <div class="row">
+            <div class="col-md-6 pull-right">
+                <div class="box box-default">
+                    <div class="box-header ui-sortable-handle">
+                        <i class="fa fa-user"></i> <h3 class="box-title">Add new Avatar</h3>
+                    </div>
+                    <div class="box-body chat" id="chat-box">
+                        {{ Form::file('image', array('class' => 'file')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
-                        <li><a href="#avatar" data-toggle="tab">Avatar</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="active tab-pane" id="settings">
                             <div class="form-horizontal">
-                                {!! Form::open(array('route' => 'profile.store', 'data-parsley-validate' => '')) !!}
-
                                 <div class="form-group">
                                     {{ Form::label('name', 'Name', array('class' => 'col-sm-2 control-label')) }}
                                     <div class="col-sm-10">
@@ -94,25 +103,8 @@
                                         {{ Form::submit('Submit',  array('class' => 'btn btn-danger')) }}
                                     </div>
                                 </div>
-                                {!! Form::close() !!}
                             </div>
                         </div>
-                        <!-- /.tab-pane -->
-                        <div class="tab-pane" id="avatar">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <div class="col-sm-10">
-                                        <input type="file"  id="image">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger pull-right">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.tab-pane -->
                     </div>
                     <!-- /.tab-content -->
                 </div>
@@ -121,7 +113,7 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-
+        {!! Form::close() !!}
     </section>
     <!-- /.content -->
 

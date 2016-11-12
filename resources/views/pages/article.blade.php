@@ -373,6 +373,7 @@
             </div>
         </div>
 
+
         <div class="row">
             <div class="twelve middle aligned wide column">
                 <div class="ui container articleList">
@@ -380,7 +381,16 @@
                         @foreach($articles as $article)
                         <div class="item">
                             <div class="ui small image">
-                                <img src="{{ asset('assets/images/2.0_image_holder.png') }}">
+                                @if (false == empty($article->getAuthorImage()->image))
+                                    <div class="ui small image">
+                                        <img src="{{ asset('images/' . $article->getAuthorImage()->image) }}">
+                                        {{--<img src="{{ asset('assets/images/2.0_image_holder.png') }}">--}}
+                                    </div>
+                                @else
+                                    <div class="ui small image">
+                                        <img src="{{ asset('assets/images/2.0_image_holder.png') }}">
+                                    </div>
+                                @endif
                             </div>
                             <div class="content">
                                 <a class="header">{{ $article->title }}</a>

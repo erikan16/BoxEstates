@@ -11,6 +11,7 @@ use Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Tag;
+use App\Profile;
 
 class TagController extends Controller
 {
@@ -35,10 +36,12 @@ class TagController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $profile = Profile::where('user_id', $user->id)->first();
         $tags = Tag::where('user_id', $user->id)->get();
 
         return view('tags.index', [
-            'user' => Auth::user()
+            'user' => Auth::user(),
+            'profile' => $profile
         ])->withTags($tags);
     }
 

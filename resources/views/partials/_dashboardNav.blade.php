@@ -17,13 +17,21 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ asset('assets/images/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+                        @if (false == empty($profile->image))
+                            <img src="{{ asset('images/' . $profile->image) }}" class="user-image" alt="User Image">
+                        @else
+                            <img src="{{ asset('images/default.jpg') }}" class="user-image" alt="User Image">
+                        @endif
                         <span class="hidden-xs"><?= $user->name; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="{{ asset('assets/images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                            @if (false == empty($profile->image))
+                                <img src="{{ asset('images/' . $profile->image) }}" class="img-circle" alt="User Image">
+                            @else
+                                <img src="{{ asset('images/default.jpg') }}" class="img-circle" alt="User Image">
+                            @endif
 
                             <p>
                                 {{ $user->name }} - Agent
@@ -53,7 +61,11 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ asset('assets/images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                @if (false == empty($profile->image))
+                    <img src="{{ asset('images/' . $profile->image) }}" class="img-circle" alt="User Image">
+                @else
+                    <img src="{{ asset('images/default.jpg') }}" class="img-circl" alt="User Image">
+                @endif
             </div>
             <div class="pull-left info">
                 <p> <?= $user->name ?></p>
