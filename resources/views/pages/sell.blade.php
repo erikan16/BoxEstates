@@ -115,16 +115,16 @@
             <div class="ui text container">
                 <h1 class="ui inverted header sell">Learn how we can help</h1>
                 <h2>Let us get in contact with you.</h2>
-                <form class="ui form sell">
+                <form class="ui form sell" action="{{ url('sell') }}" method="POST">
                     <!-- Name and Address -->
                     <div class="field">
                         <label>Name</label>
                         <div class="two fields">
                             <div class="field">
-                                <input type="text" name="shipping[first-name]" placeholder="First Name">
+                                <input type="text" name="first-name" placeholder="First Name">
                             </div>
                             <div class="field">
-                                <input type="text" name="shipping[last-name]" placeholder="Last Name">
+                                <input type="text" name="last-name" placeholder="Last Name">
                             </div>
                         </div>
                     </div>
@@ -132,10 +132,10 @@
                         <label>Address</label>
                         <div class="fields">
                             <div class="twelve wide field">
-                                <input type="text" name="shipping[address]" placeholder="Street Address">
+                                <input type="text" name="address" placeholder="Street Address">
                             </div>
                             <div class="four wide field">
-                                <input type="text" name="shipping[address-2]" placeholder="Apt #">
+                                <input type="text" name="address-2" placeholder="Apt #">
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                     <div class="three fields">
                         <div class="field">
                             <label>State</label>
-                            <select class="ui search selection fluid dropdown" id="state">
+                            <select class="ui search selection fluid dropdown" id="state" name="state">
                                 <option value="">State</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -200,7 +200,7 @@
                         </div>
                         <div class="field">
                             <label>Country</label>
-                            <div class="ui fluid search selection dropdown" id="country">
+                            <div class="ui fluid search selection dropdown" id="country" name="country">
                                 <input type="hidden" name="country">
                                 <i class="dropdown icon"></i>
                                 <div class="default text">Select Country</div>
@@ -453,11 +453,11 @@
                         <div class="field">
                             <label>Email</label>
                             <div class="ui input">
-                                <input placeholder="Email" type="text">
+                                <input placeholder="Email" type="text" name="email">
                             </div>
                         </div>
                     </div>
-                    <div class="ui large button">Learn More <i class="arrow right icon"></i></div>
+                    <button type="submit" class="ui large button">Learn More <i class="arrow right icon"></i></button>
                 </form>
 
             </div>
