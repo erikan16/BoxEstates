@@ -50,7 +50,7 @@
                             @foreach($article->comments as $comment)
                             <div class="comment">
                                 <a class="avatar">
-                                    <img src="{{ asset('assets/images/guest_avatar.jpg') }}">
+                                    <img src="{{ asset('images/default.jpg') }}">
                                 </a>
                                 <div class="content">
                                     <a class="author">{{ $comment->getAuthor()->name  }}</a>

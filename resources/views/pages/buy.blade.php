@@ -183,10 +183,7 @@
         <div class="row mapContainer">
             <div class="ui grid internally celled">
                 <div class="ui equal width stackable internally celled grid">
-                    <div class="eight wide column">
-                        <div id="map"></div>
-                    </div>
-                    <div class="eight wide column">
+                    <div class="sixteen wide column">
 
                         <div class="ui three column grid">
                             @foreach($properties as $property)
@@ -197,7 +194,7 @@
                                             <div class="content">
                                                 <div class="center">
                                                     <h2 class="ui price header">${{ $property->price }}</h2>
-                                                    <a href="house_single.html">
+                                                    <a href="{{ route('property.single', $property->id) }}">
                                                         <div class="ui inverted button">Show Property</div>
                                                     </a>
                                                 </div>

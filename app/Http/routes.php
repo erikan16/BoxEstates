@@ -28,6 +28,7 @@ Route::get('/pages/article/slug/{slug}', ['as' => 'article.single', 'uses' => 'A
 Route::get('pages/{id}', ['as' => 'profile.single', 'uses' => 'AgentSingleController@getSingle']);
 Route::post('pages/{id}', 'AgentSingleController@contactAgent');
 
+Route::get('pages/property/{id}', ['as' => 'property.single', 'uses' => 'PropertySingleController@getSingle']);
 
 Route::get('/', 'PagesController@getIndex');
 
@@ -38,8 +39,10 @@ Route::resource('dashboard', 'DashboardController@getIndex');
 Route::resource('tags', 'TagController', ['except' => ['create']]);
 Route::resource('todo', 'TodoController');
 Route::resource('article', 'ArticleController');
+
 Route::resource('property', 'PropertyController');
 Route::post('property/imageUpload', ['uses' => 'PropertyController@imageUpload', 'as' => 'property.imageUpload']);
+
 Route::resource('profile', 'ProfileController');
 
 
