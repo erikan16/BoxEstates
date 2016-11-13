@@ -10,6 +10,7 @@ return array(
     'AddForeignKeyTodoUsers' => $baseDir . '/database/migrations/2016_11_05_150228_add_foreign_key_todo_users.php',
     'AddForeignUserToArticle' => $baseDir . '/database/migrations/2016_11_05_165156_add_foreign_user_to_article.php',
     'AddImageTableUser' => $baseDir . '/database/migrations/2016_11_12_014120_add_image_table_user.php',
+    'AddPropertyGalleryTable' => $baseDir . '/database/migrations/2016_11_13_180047_add_property_gallery_table.php',
     'AddSlugToUsers' => $baseDir . '/database/migrations/2016_11_09_022828_add_slug_to_users.php',
     'AddUserIdToProfiles' => $baseDir . '/database/migrations/2016_11_11_171247_add_user_id_to_profiles.php',
     'AddUserIdToProperties' => $baseDir . '/database/migrations/2016_11_11_171715_add_user_id_to_properties.php',

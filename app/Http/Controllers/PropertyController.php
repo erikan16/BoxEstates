@@ -131,7 +131,7 @@ class PropertyController extends Controller
 
         $filename = uniqid(). $file->getClientOriginalExtension();
 
-        $file->mode('property/'. $filename);
+        $file->move('property/'. $filename);
 
         $gallery = PropertyGallery::find($request->input('property_id'));
 
