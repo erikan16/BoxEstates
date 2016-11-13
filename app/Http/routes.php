@@ -19,10 +19,12 @@ Route::get('pages/sell', 'PagesController@getSell');
 Route::post('pages/sell', 'PagesController@postSell');
 
 Route::get('pages/article', 'PagesController@getArticle');
-Route::get('pages/{slug}', ['as' => 'article.single', 'uses' => 'ArticleSingleController@getSingle'])
+Route::get('pages/agent', 'PagesController@getAgent');
+
+Route::get('/pages/article/slug/{slug}', ['as' => 'article.single', 'uses' => 'ArticleSingleController@getSingle'])
     ->where('slug', '[\w\d\-\_]+');
 
-Route::get('pages/agent', 'PagesController@getAgent');
+
 Route::get('pages/{id}', ['as' => 'profile.single', 'uses' => 'AgentSingleController@getSingle']);
 Route::post('pages/{id}', 'AgentSingleController@contactAgent');
 

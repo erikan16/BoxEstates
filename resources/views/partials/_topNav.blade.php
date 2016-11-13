@@ -7,10 +7,10 @@
                 </div>
 
                 <div class="right item">
-                    <a href="{{'buy'}}" class="{{ Request::is('buy') ? 'active' : '' }} item">Buy</a>
-                    <a href="{{'sell'}}" class="item">Sell</a>
-                    <a href="{{'agent'}}" class="item">Agent Finder</a>
-                    <a href="{{'article'}}" class="item">Articles</a>
+                    <a href="{{ url('pages/buy') }}" class="{{ Request::is('buy') ? 'active' : '' }} item">Buy</a>
+                    <a href="{{ url('pages/sell') }}" class="item">Sell</a>
+                    <a href="{{ url('pages/agent') }}" class="item">Agent Finder</a>
+                    <a href="{{ url('pages/article') }}" class="item">Articles</a>
                     @if (Auth::check())
                         @if (Auth::user()->user_type === 'agent')
                             <a href="/dashboard" class="ui inverted button">Dashboard</a>

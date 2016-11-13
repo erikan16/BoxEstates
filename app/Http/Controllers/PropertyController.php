@@ -136,7 +136,12 @@ class PropertyController extends Controller
         $gallery = PropertyGallery::find($request->input('property_id'));
 
         $image = $gallery->images()->create([
-
+            'property_id' => $request->input('property_id'),
+            'file_name' => $filename,
+            'file_size' => $file->getClientSize(),
+            'file_meme' => $file->getClientMimeType(),
+            'file_path' => 'property/' . $filename,
+            'user_id ' => Auth::user()->id,
         ]);
 
     }
