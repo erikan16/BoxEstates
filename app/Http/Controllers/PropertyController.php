@@ -127,21 +127,19 @@ class PropertyController extends Controller
     }
 
     public function imageUpload(Request $request) {
+
         $file = $request->file('file');
+        $filename = uniqid(). $file->getClientOriginalName();
+        $file->move('images/property', $filename);
 
-        $filename = uniqid(). $file->getClientOriginalExtension();
-
-        $file->move('images/property/'. $filename);
-
-        $gallery = PropertyGallery::find($request->input('property_id'));
+        $gallery = Property::find($request->input('property_id'));
 
         $gallery->images()->create([
             'property_id' => $request->input('property_id'),
             'file_name' => $filename,
             'file_size' => $file->getClientSize(),
-            'file_meme' => $file->getClientMimeType(),
-            'file_path' => 'property/' . $filename,
-            'user_id ' => Auth::user()->id,
+            'file_mime' => $file->getClientMimeType(),
+            'file_path' => 'images/property/' . $filename
         ]);
 
     }

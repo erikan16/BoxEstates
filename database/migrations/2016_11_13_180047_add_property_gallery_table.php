@@ -14,14 +14,12 @@ class AddPropertyGalleryTable extends Migration
     {
         Schema::create('propertyGallery', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('gallery_id');
+            $table->integer('property_id');
             $table->string('file_name');
             $table->string('file_size', 10);
             $table->string('file_mime', 50);
             $table->string('file_path');
-            $table->integer('property_id');
             $table->timestamps();
-
         });
     }
 

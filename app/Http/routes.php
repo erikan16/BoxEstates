@@ -39,7 +39,7 @@ Route::resource('tags', 'TagController', ['except' => ['create']]);
 Route::resource('todo', 'TodoController');
 Route::resource('article', 'ArticleController');
 Route::resource('property', 'PropertyController');
-Route::post('profile/upload-image', ['as' => 'profile.uploadImage']);
+Route::post('property/imageUpload', ['uses' => 'PropertyController@imageUpload', 'as' => 'property.imageUpload']);
 Route::resource('profile', 'ProfileController');
 
 
