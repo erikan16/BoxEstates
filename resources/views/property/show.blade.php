@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <form action="{{ url('property.imageUpload') }}" class="dropzone" id="addImages" method="POST">
+            <form action="{{ url('profile/upload-image') }}" class="dropzone" id="addImages" method="POST">
                 {{ csrf_field() }}
                 <input type="hidden" name="propertyGallery" value="{{ $property->id }}">
 
