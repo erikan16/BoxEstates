@@ -3,7 +3,6 @@
 @section('title', 'Property')
 
 @section('stylesheets')
-    <link rel="stylesheet" type="text/css" href="assets/components/flag.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/unite-gallery.css') }}" type="text/css">
 @endsection
 

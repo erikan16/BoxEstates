@@ -2,6 +2,12 @@
 
 @section('title', 'Articles')
 
+@section('stylesheets')
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
+    <link rel="stylesheet" href="{{ asset('assets/css/unite-gallery.css') }}" type="text/css">
+@endsection
+
+
 @section('content')
     <!-- Content Wrapper -->
     <div class="wrapper article">
