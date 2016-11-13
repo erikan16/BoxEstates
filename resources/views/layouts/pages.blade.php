@@ -51,6 +51,8 @@
 <div class="pusher">
     <!-- Navigation -->
    @include('partials._topNav')
+
+    @include('partials._messages')
     <!-- Content Wrapper -->
     <div class="wrapper @yield('wrapperExtension')">
         @yield('content')

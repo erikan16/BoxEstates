@@ -49,8 +49,7 @@
                             <td> {!!html_entity_decode(substr($article->description, 0, 20))!!}{!!html_entity_decode(strlen($article->description) > 20 ? "..." : "" )!!}</td>
                             <td> {{ date('m/j/y', strtotime($article->created_at)) }} </td>
                             <td>
-                                <span class="label label-success">For Sale</span>
-                                <span class="label label-success">Apopka, FL </span>
+                                <a href="{{ url('pages/'.$article->slug) }}" target="blank">{{ url('pages/'.$article->slug) }}</a>
                             </td>
                             <td>
                                 <a href="{{ route('article.show', $article->id) }}" class="btn btn-block btn-primary btn-sm view">View</a>

@@ -18,8 +18,15 @@ Route::get('pages/buy', 'PagesController@getBuy');
 Route::get('pages/sell', 'PagesController@getSell');
 Route::post('pages/sell', 'PagesController@postSell');
 
-Route::get('pages/agent', 'PagesController@getAgent');
 Route::get('pages/article', 'PagesController@getArticle');
+Route::get('pages/{slug}', ['as' => 'article.single', 'uses' => 'ArticleSingleController@getSingle'])
+    ->where('slug', '[\w\d\-\_]+');
+
+Route::get('pages/agent', 'PagesController@getAgent');
+Route::get('pages/{id}', ['as' => 'profile.single', 'uses' => 'AgentSingleController@getSingle']);
+Route::post('pages/{id}', 'AgentSingleController@contactAgent');
+
+
 Route::get('/', 'PagesController@getIndex');
 
 
@@ -27,8 +34,6 @@ Route::get('/', 'PagesController@getIndex');
 
 Route::resource('dashboard', 'DashboardController@getIndex');
 Route::resource('tags', 'TagController', ['except' => ['create']]);
-Route::get('pages/{slug}', ['as' => 'article.single', 'uses' => 'ArticleSingleController@getSingle'])
-    ->where('slug', '[\w\d\-\_]+');
 Route::resource('todo', 'TodoController');
 Route::resource('article', 'ArticleController');
 Route::resource('property', 'PropertyController');

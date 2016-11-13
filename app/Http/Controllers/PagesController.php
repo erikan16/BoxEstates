@@ -65,13 +65,17 @@ class PagesController extends Controller {
     }
 
     public function getAgent() {
-        return view('pages.agent');
+
+        $agents = Profile::orderBy('created_at')->get();
+
+        return view('pages.agent')->withAgents($agents);
+
     }
 
     public function getArticle() {
+
         $articles = Article::orderBy('created_at')->get();
         return view('pages.article',[
-//            'profile_image' => Article::with('getAuthorImage')->get()
         ])->withArticles($articles);
     }
 

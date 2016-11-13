@@ -8,7 +8,7 @@
 
 @if (Session::has('successMail'))
 
-    <div style="background: darkseagreen; padding: 20px 0;" role="alert">
+    <div style="background: darkseagreen; padding: 20px 0; text-align: center; color: #fff;" role="alert">
         <strong>Success:</strong> {{ Session::get('successMail') }}
     </div>
 

@@ -10,6 +10,7 @@ use Session;
 use App\Http\Requests;
 use App\Property;
 use App\Profile;
+use App\PropertyGallery;
 
 
 class PropertyController extends Controller
@@ -123,6 +124,21 @@ class PropertyController extends Controller
             'user' => Auth::user()
 
         ])->withProperty($property);
+    }
+
+    public function imageUpload(Request $request) {
+        $file = $request->file('file');
+
+        $filename = uniqid(). $file->getClientOriginalExtension();
+
+        $file->mode('property/'. $filename);
+
+        $gallery = PropertyGallery::find($request->input('property_id'));
+
+        $image = $gallery->images()->create([
+
+        ]);
+
     }
 
     /**

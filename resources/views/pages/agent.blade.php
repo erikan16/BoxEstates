@@ -324,66 +324,24 @@
         <div class="mobile only sixteen wide column">
             <div class="ui three column doubling stackable grid container">
                 <div class="ui four cards">
-                    <div class="column">
-                        <div class="ui segment">
-                            <div class="card">
-                                <a href="agent_single.html">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones 12 | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </a>
+                    @foreach($agents as $agent)
+                        <div class="column">
+                            <div class="ui segment">
+                                <div class="card">
+                                    <a href="{{ route('profile.single', $agent->id) }}">
+                                        <div class="image">
+                                            <img src="{{ asset('images/' . $agent->image) }}">
+                                        </div>
+                                        <div class="extra">
+                                            <h4>{{ $agent->name }}</h4>
+                                            <p>{{ $agent->city }}, {{ $agent->state }} </p>
+                                            {{--Rating:<div class="ui star rating" data-rating="4"></div>--}}
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui segment">
-                            <div class="card">
-                                <a href="agent_single.html">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui segment">
-                            <div class="card">
-                                <a href="agent_single.html">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui segment">
-                            <div class="card">
-                                <a href="agent_single.html">
-                                    <div class="image">
-                                        <img src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -392,81 +350,20 @@
                 <div class="row">
                     <div class="ui container articleList">
                         <div class="ui four cards">
+                            @foreach($agents as $agent)
                             <div class="card">
-                                <a href="agent_single.html">
+                                <a href="{{ route('profile.single', $agent->id) }}">
                                     <div class="image">
-                                        <img src="{{ asset('assets/images/1.0_girl.jpg') }}">
+                                        <img src="{{ asset('images/' . $agent->image) }}">
                                     </div>
                                     <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
+                                        <h4>{{ $agent->name }}</h4>
+                                        <p>{{ $agent->city }}, {{ $agent->state }} </p>
+                                        {{--Rating:<div class="ui star rating" data-rating="4"></div>--}}
                                     </div>
                                 </a>
                             </div>
-                            <div class="card">
-                                <div class="image">
-                                    <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}g">                            </div>
-                                <div class="extra">
-                                    <h4>Sally Jones | Orlando, FL </h4>
-                                    Rating:<div class="ui star rating" data-rating="4"></div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image">
-                                    <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                </div>
-                                <div class="extra">
-                                    <h4>Sally Jones | Orlando, FL </h4>
-                                    Rating:<div class="ui star rating" data-rating="4"></div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image">
-                                    <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                </div>
-                                <div class="extra">
-                                    <h4>Sally Jones | Orlando, FL </h4>
-                                    Rating:<div class="ui star rating" data-rating="4"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui four cards">
-                            <div class="card">
-                                <div class="image">
-                                    <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                </div>
-                                <div class="extra">
-                                    <h4>Sally Jones | Orlando, FL </h4>
-                                    Rating:<div class="ui star rating" data-rating="4"></div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image">
-                                    <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                </div>
-                                <div class="extra">
-                                    <h4>Sally Jones | Orlando, FL </h4>
-                                    Rating:<div class="ui star rating" data-rating="4"></div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image">
-                                    <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                </div>
-                                <div class="extra">
-                                    <h4>Sally Jones | Orlando, FL </h4>
-                                    Rating:<div class="ui star rating" data-rating="4"></div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="image">
-                                    <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                </div>
-                                <div class="extra">
-                                    <h4>Sally Jones | Orlando, FL </h4>
-                                    Rating:<div class="ui star rating" data-rating="4"></div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -478,81 +375,20 @@
                     <div class="row">
                         <div class="ui container articleList">
                             <div class="ui four cards">
+                                @foreach($agents as $agent)
                                 <div class="card">
-                                    <a href="agent_single.html">
+                                    <a href="{{ route('profile.single', $agent->id) }}">
                                         <div class="image">
-                                            <img src="{{ asset('assets/images/1.0_girl.jpg') }}">
+                                            <img src="{{ asset('images/' . $agent->image) }}">
                                         </div>
                                         <div class="extra">
-                                            <h4>Sally Jones | Orlando, FL </h4>
-                                            Rating:<div class="ui star rating" data-rating="4"></div>
+                                            <h4>{{ $agent->name }}</h4>
+                                            <p>{{ $agent->city }}, {{ $agent->state }} </p>
+                                            {{--Rating:<div class="ui star rating" data-rating="4"></div>--}}
                                         </div>
                                     </a>
                                 </div>
-                                <div class="card">
-                                    <div class="image">
-                                        <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">                            </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="image">
-                                        <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="image">
-                                        <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ui four cards">
-                                <div class="card">
-                                    <div class="image">
-                                        <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="image">
-                                        <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="image">
-                                        <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="image">
-                                        <img class="ui fluid image" src="{{ asset('assets/images/1.0_girl.jpg') }}">
-                                    </div>
-                                    <div class="extra">
-                                        <h4>Sally Jones | Orlando, FL </h4>
-                                        Rating:<div class="ui star rating" data-rating="4"></div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
