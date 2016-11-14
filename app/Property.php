@@ -13,7 +13,14 @@ class Property extends Model
 
     public function images()
     {
-        return $this->hasMany('App\PropertyGallery');
+        return $this->hasMany('App\PropertyGallery')->get();
+    }
+
+    public function getFirstImage()
+    {
+
+        return $this->hasMany('App\PropertyGallery')->first();
+
     }
 
 }
