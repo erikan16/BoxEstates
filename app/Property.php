@@ -13,7 +13,7 @@ class Property extends Model
 
     public function images()
     {
-        return $this->hasMany('App\PropertyGallery')->get();
+        return $this->hasMany('App\PropertyGallery');
     }
 
 }

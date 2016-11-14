@@ -200,7 +200,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('assets/images/1.0_buy.jpg') }}">
+                                        {{--<img src="{{ asset('assets/images/1.0_buy.jpg') }}">--}}
+                                        <img src="/images/property/{{ $property->getFirstImage()->file_name  }}">
                                     </div>
                                     <div class="content">
                                         <div class="ui red empty circular label"></div> For Sale
