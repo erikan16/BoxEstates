@@ -21,15 +21,15 @@
                             Apopka, FL 32712</span>
                 </h1>
                 <h5>
-                    <img class="ui avatar image" src="{{asset('assets/icons/sleeping-bed-silhouette.svg')}}"> 3 beds <br>
-                    <img class="ui avatar image" src="{{ asset('assets/icons/shower.svg') }}"> 2 baths <br>
-                    <img class="ui avatar image" src="{{ asset('assets/icons/set-square.svg') }}">2,987 sq ft
+                    <img class="ui avatar image" src="{{asset('assets/icons/sleeping-bed-silhouette.svg')}}"> {{ $property->beds }} beds <br>
+                    <img class="ui avatar image" src="{{ asset('assets/icons/shower.svg') }}"> {{ $property->baths }} baths <br>
+                    <img class="ui avatar image" src="{{ asset('assets/icons/set-square.svg') }}">{{ $property->feet }} sq ft
                 </h5>
                 <div class="marketInfo">
                     <div class="ui red empty circular label"></div> For Sale
 
                     <div class="priceInfo">
-                        <h2>$400,000</h2>
+                        <h2>$ {{ $property->price }}</h2>
                     </div>
 
                     <div class="agentInfo">
@@ -56,31 +56,11 @@
 
                     @endforeach
 
-                    {{--<a href="http://unitegallery.net">--}}
-                        {{--<img alt="Iphone Back"--}}
-                             {{--src="{{ asset('assets/unitegallery/source/thumbs/tile10.jpg') }}"--}}
-                             {{--data-image="assets/unitegallery/source/big/tile10.jpg"--}}
-                             {{--data-image-mobile="assets/unitegallery/source/thumbs/tile10.jpg"--}}
-                             {{--data-thumb-mobile="assets/unitegallery/source/thumbs/tile10.jpg"--}}
-                             {{--data-description="This is iphone back"--}}
-                             {{--style="display:none">--}}
-                    {{--</a>--}}
-
-                    {{--<a href="http://unitegallery.net">--}}
-                        {{--<img alt="Lemon Slice"--}}
-                             {{--src="{{ asset('assets/unitegallery/source/thumbs/tile10.jpg') }}"--}}
-                             {{--data-image="assets/unitegallery/source/big/tile1.jpg"--}}
-                             {{--data-image-mobile="assets/unitegallery/source/thumbs/tile1.jpg"--}}
-                             {{--data-thumb-mobile="assets/unitegallery/source/thumbs/tile1.jpg"--}}
-                             {{--data-description="This is a Lemon Slice"--}}
-                             {{--style="display:none">--}}
-                    {{--</a>--}}
-
                 </div>
             </div>
         </div>
         <div class="sixteen wide column">
-            <div id="map"></div>
+            <div style="height: 400px;" id="map"></div>
         </div>
     </div>
 
@@ -92,23 +72,37 @@
     <script type="application/javascript">
         jQuery(document).ready(function(){
 
+            var address = '{{ $property->address }} {{ $property->state }} {{ $property->zip }}';
+            // Fetch geolocation of address
+            jQuery.get('https://maps.googleapis.com/maps/api/geocode/json', {
+
+                address: address
+
+            }, function (response) {
+
+                var lat = response.results[0].geometry.location.lat;
+                var lng = response.results[0].geometry.location.lng;
+
+                var mapOptions = {
+                    zoom: 16,
+                    center: new google.maps.LatLng(lat, lng),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var google_map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+                new google.maps.Marker({
+                    position: new google.maps.LatLng(lat, lng),
+                    map: google_map
+                });
+
+
+            });
+
             jQuery("#gallery").unitegallery({
                 theme_panel_position: "left"
             });
 
-            var mapOptions = {
-                zoom: 15,
-                center: new google.maps.LatLng(28.602432, -81.200264),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            new google.maps.Map(document.getElementById('map'), mapOptions);
         });
-
-        var mapOptions = {
-            zoom: 15,
-            center: new google.maps.LatLng(28.602432, -81.200264),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        new google.maps.Map(document.getElementById('map'), mapOptions);
     </script>
 @endsection
