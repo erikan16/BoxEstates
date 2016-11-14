@@ -45,136 +45,37 @@
         <div class=" ten wide column">
             <div class="ui segment">
                 <div id="gallery" style="display:none;">
+                    @foreach($property->images() as $image)
 
-                    <a href="http://unitegallery.net">
-                        <img alt="Lemon Slice"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile1.jpg') }}"
-                             data-image="assets/unitegallery/source/thumbs/tile1.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile1.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile1.jpg"
-                             data-description="This is a Lemon Slice"
-                             style="display:none">
-                    </a>
+                        <a href="http://unitegallery.net">
+                            <img
+                                    src="/images/property/{{ $image->file_name }}"
+                                 data-image="/images/property/{{ $image->file_name }}"
+                                 style="display:none">
+                        </a>
 
-                    <a href="http://unitegallery.net">
-                        <img alt="Peppers"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile2.jpg') }}"
-                             data-image="assets/unitegallery/source/thumbs/tile2.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile2.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile2.jpg"
-                             data-description="Those are peppers"
-                             style="display:none">
-                    </a>
+                    @endforeach
 
-                    <a href="http://unitegallery.net">
-                        <img alt="Keys"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile3.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile3.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile3.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile3.jpg"
-                             data-description="Those are keys"
-                             style="display:none">
-                    </a>
+                    {{--<a href="http://unitegallery.net">--}}
+                        {{--<img alt="Iphone Back"--}}
+                             {{--src="{{ asset('assets/unitegallery/source/thumbs/tile10.jpg') }}"--}}
+                             {{--data-image="assets/unitegallery/source/big/tile10.jpg"--}}
+                             {{--data-image-mobile="assets/unitegallery/source/thumbs/tile10.jpg"--}}
+                             {{--data-thumb-mobile="assets/unitegallery/source/thumbs/tile10.jpg"--}}
+                             {{--data-description="This is iphone back"--}}
+                             {{--style="display:none">--}}
+                    {{--</a>--}}
 
-                    <a href="http://unitegallery.net">
-                        <img alt="Friuts in cup"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile4.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile4.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile4.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile4.jpg"
-                             data-description="Those are friuts in a cup"
-                             style="display:none">
-                    </a>
+                    {{--<a href="http://unitegallery.net">--}}
+                        {{--<img alt="Lemon Slice"--}}
+                             {{--src="{{ asset('assets/unitegallery/source/thumbs/tile10.jpg') }}"--}}
+                             {{--data-image="assets/unitegallery/source/big/tile1.jpg"--}}
+                             {{--data-image-mobile="assets/unitegallery/source/thumbs/tile1.jpg"--}}
+                             {{--data-thumb-mobile="assets/unitegallery/source/thumbs/tile1.jpg"--}}
+                             {{--data-description="This is a Lemon Slice"--}}
+                             {{--style="display:none">--}}
+                    {{--</a>--}}
 
-                    <a href="http://unitegallery.net">
-                        <img alt="Yellow Flowers"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile5.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile5.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile5.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile5.jpg"
-                             data-description="Those are yellow flowers"
-                             style="display:none">
-                    </a>
-
-                    <a href="http://unitegallery.net">
-                        <img alt="Butterfly"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile6.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile6.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile6.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile6.jpg"
-                             data-description="This is butterfly"
-                             style="display:none">
-                    </a>
-
-                    <a href="http://unitegallery.net">
-                        <img alt="Boat"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile7.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile7.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile7.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile7.jpg"
-                             data-description="This is a boat"
-                             style="display:none">
-                    </a>
-
-                    <a href="http://unitegallery.net">
-                        <img alt="Woman"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile8.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile8.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile8.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile8.jpg"
-                             data-description="This is a woman"
-                             style="display:none">
-                    </a>
-
-                    <a href="http://unitegallery.net">
-                        <img alt="Cup Of Coffee"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile9.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile9.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile9.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile9.jpg"
-                             data-description="This is cup of coffee"
-                             style="display:none">
-                    </a>
-
-                    <a href="http://unitegallery.net">
-                        <img alt="Iphone Back"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile10.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile10.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile10.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile10.jpg"
-                             data-description="This is iphone back"
-                             style="display:none">
-                    </a>
-
-                    <a href="http://unitegallery.net">
-                        <img alt="Lemon Slice"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile10.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile1.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile1.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile1.jpg"
-                             data-description="This is a Lemon Slice"
-                             style="display:none">
-                    </a>
-
-                    <a href="http://unitegallery.net">
-                        <img alt="Peppers"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile2.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile2.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile2.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile2.jpg"
-                             data-description="Those are peppers"
-                             style="display:none">
-                    </a>
-
-                    <a href="http://unitegallery.net">
-                        <img alt="Keys"
-                             src="{{ asset('assets/unitegallery/source/thumbs/tile3.jpg') }}"
-                             data-image="assets/unitegallery/source/big/tile3.jpg"
-                             data-image-mobile="assets/unitegallery/source/thumbs/tile3.jpg"
-                             data-thumb-mobile="assets/unitegallery/source/thumbs/tile3.jpg"
-                             data-description="Those are keys"
-                             style="display:none">
-                    </a>
                 </div>
             </div>
         </div>
