@@ -2,194 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0c0e94d-b9e9-4d1b-b6d4-1497c382b2f1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/1479170949.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/1479176844.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article/1479171173.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article/1479171249.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article/1479171361.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article/1479171649.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/article/1479176798.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/property/582a2e7d4ffd51.0_buy.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/property/582a2efd6f15c2.0_image_holder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/property/582a2f7c576dc1.0_buy.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/property/582a2fbc467821.0_buy.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/property/582a7213669011.0_girl.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/property/582a7213808e61.0_buy.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/property/582a721399f921.0_guy.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/property/582a7213b28901.0_home.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/GeoIp/GeoLite2-City.mmdb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/GeoIp/GeoLiteCity.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/tests/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/config/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/UPGRADING.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/ClientInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Cookie/SetCookie.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/BadResponseException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ClientException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ConnectException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/GuzzleException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/SeekException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ServerException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/TransferException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/MessageFormatter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Middleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Pool.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RequestOptions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/TransferStats.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/UriTemplate.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions_include.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/phpunit.xml.dist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/AggregateException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/CancellationException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/EachPromise.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/FulfilledPromise.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/Promise.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/PromiseInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/PromisorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/RejectedPromise.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/RejectionException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/TaskQueue.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/functions_include.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/AggregateExceptionTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/EachPromiseTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/FulfilledPromiseTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/NotPromiseInstance.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/PromiseTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/RejectedPromiseTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/RejectionExceptionTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/TaskQueueTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/Thennable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/bootstrap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/tests/functionsTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/phpunit.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/CacheManager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/CpfCnpj/Cnpj.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/CpfCnpj/Cpf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/CpfCnpj/CpfCnpj.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/DateTime.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Debug/Dumper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Debug/HtmlDumper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Environment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Exceptions/EnvironmentVariableNotSet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Exceptions/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Filesystem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Finder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/GeoIp/GeoIp.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/GeoIp/GeoIp1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/GeoIp/GeoIp2.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/GeoIp/GeoIpAbstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/GeoIp/GeoIpContract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/ImporterExporter/ImporterExporter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Inflectors/En.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Inflectors/Inflector.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Inflectors/InflectorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Inflectors/PtBr.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/IpAddress.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Migration.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/PhpSession.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Response.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/ServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/Timer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/support/src/helpers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/changelog.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/phpspec.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Contracts/ZipCode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Exceptions/PropertyDoesNotExists.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Exceptions/WebServicesNotFound.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/BaseClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/Country.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/Finder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/FinderInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/Http.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/HttpInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/Result.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/AR.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/AU.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/BR.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/CA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/CH.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/CZ.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/DE.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/ES.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/FR.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/GB.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/IN.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/IT.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/JP.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/LT.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/MX.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/PK.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/PL.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/PT.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/RU.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/TR.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/US.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Countries/ZA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Services/Geonames.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/WebServices/Services/Zippopotamus.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Support/Zip.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Vendor/Laravel/Facade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/Vendor/Laravel/ServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/ZipCode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/src/config/config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/tests/spec/PragmaRX/ZIPcode/Data.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/tests/spec/PragmaRX/ZIPcode/Support/CountrySpec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/tests/spec/PragmaRX/ZIPcode/Support/FinderSpec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/tests/spec/PragmaRX/ZIPcode/Support/ResultSpec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/tests/spec/PragmaRX/ZIPcode/Support/WebServiceSpec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/tests/spec/PragmaRX/ZIPcode/Support/WebServicesSpec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/tests/spec/PragmaRX/ZIPcode/Support/ZipSpec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/pragmarx/zipcode/tests/spec/PragmaRX/ZIPcode/ZIPcodeSpec.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/1479080967.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/.gitattributes" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/.gitattributes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/.travis.yml" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/ChangeLog-4.8.md" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/ChangeLog-4.8.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert/Functions.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert/Functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/PHP/Template/TestCaseMethod.tpl.dist" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/PHP/Template/TestCaseMethod.tpl.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/README.md" afterPath="$PROJECT_DIR$/vendor/sebastian/recursion-context/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/src/Context.php" afterPath="$PROJECT_DIR$/vendor/sebastian/recursion-context/src/Context.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/tests/ContextTest.php" afterPath="$PROJECT_DIR$/vendor/sebastian/recursion-context/tests/ContextTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/EventDispatcher.php" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/EventDispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/Mbstring.php" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/Mbstring.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/bootstrap.php" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php56/Php56.php" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-php56/Php56.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php56/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-php56/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-util/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/polyfill-util/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/yaml/Inline.php" afterPath="$PROJECT_DIR$/vendor/symfony/yaml/Inline.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/yaml/Tests/InlineTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/yaml/Tests/InlineTest.php" />
     </list>
     <ignored path="box_estates.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -244,8 +80,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+            <state relative-caret-position="90">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -416,6 +252,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BoxEstates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BoxEstates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="storage" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -430,25 +280,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BoxEstates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BoxEstates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -553,7 +385,7 @@
       <workItem from="1478525422329" duration="5544000" />
       <workItem from="1478647528256" duration="56467000" />
       <workItem from="1478877016246" duration="102839000" />
-      <workItem from="1479221406171" duration="511000" />
+      <workItem from="1479221406171" duration="1303000" />
     </task>
     <task id="LOCAL-00001" summary="Alpha Fixes and Semi Beta Phase additions">
       <created>1478799049713</created>
@@ -751,11 +583,32 @@
       <option name="project" value="LOCAL" />
       <updated>1479178022802</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="changes">
+      <created>1479222240443</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1479222240443</updated>
+    </task>
+    <task id="LOCAL-00030" summary="changes">
+      <created>1479222352014</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1479222352014</updated>
+    </task>
+    <task id="LOCAL-00031" summary="changes">
+      <created>1479222422403</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1479222422403</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191846000" />
+    <option name="totallyTimeSpent" value="192638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="23" width="1354" height="813" extended-state="0" />
@@ -768,9 +621,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19434373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26692456" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.77266186" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.56258994" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5942446" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59856117" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -836,7 +689,8 @@
     <MESSAGE value="Image Loader on Buy Page" />
     <MESSAGE value="Map Locator Buy page" />
     <MESSAGE value="Article Images/ Tags/ Style Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Article Images/ Tags/ Style Changes" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1200,8 +1054,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
