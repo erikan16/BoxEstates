@@ -126,9 +126,13 @@ class PropertyController extends Controller
     public function show($id)
     {
         $property = Property::find($id);
+        $user = Auth::user();
+        $profile = Profile::where('user_id', $user->id)->first();
+
         return view('property.show', [
 
-            'user' => Auth::user()
+            'user' => $user,
+            'profile' => $profile
 
         ])->withProperty($property);
     }
