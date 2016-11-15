@@ -49,14 +49,20 @@
             <div class="textWrapper">
                 <div class="ui grid">
                     <div class="fifteen wide column">
-                        {!!html_entity_decode($article->description)!!}
+                        @if(false == empty($article->image))
+                            <img src="{{ asset('images/article/' . $article->image) }}" class="articleImage ui medium rounded image">
+                        @endif
+                        <div class="contentDescription">
+                            {!!html_entity_decode($article->description)!!}
+                        </div>
                         <br>
                         <div class="ui comments">
                             <h3 class="ui dividing header">{{ $article->comments()->count() }} Comments</h3>
                             @foreach($article->comments as $comment)
                             <div class="comment">
                                 <a class="avatar">
-                                    <img src="{{ asset('images/default.jpg') }}">
+                                    {{--<img src="{{ asset('images/default.jpg') }}">--}}
+                                    <img src="{{ asset('images/' . $article->getAuthorImage()) }} ">
                                 </a>
                                 <div class="content">
                                     <a class="author">{{ $comment->getAuthor()->name  }}</a>
@@ -72,12 +78,10 @@
                             @if ($loggedIn)
                             <div class="ui form reply">
                             {{ Form::open(['route' => ['comments.store', $article->id], 'method' => 'POST']) }}
-
                                 <div class="field">
                                     {{ Form::textarea('comment', null, ['class' => '']) }}
                                 </div>
-                                {{ Form::submit('Add Reply',  array('class' => 'ui blue labeled submit icon button')) }}
-
+                                <button type="submit" class="ui blue labeled submit icon button"> <i class="icon edit"></i> Add Reply</button>
                             {!! Form::close() !!}
                             </div>
                             @endif

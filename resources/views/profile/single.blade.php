@@ -75,15 +75,12 @@
         </div>
         <div class="nine wide computer eight wide tablet fifteen wide mobile column">
             <div class="ui segment">
-                <p>{{ $agent->experience }}</p>
-
                 <h5>Experience:</h5>
-                {{--<p>15 years</p>--}}
-                <p>{{ $agent->topGear }}</p>
+                <p>{{ $agent->experience }}</p>
 
                 <h5>Brokerage:</h5>
                 <p>{{ $agent->company_name }}</p>
-                <a href="{{ $agent->company_url }}">{{ $agent->company_url }}</a>
+                <a href="http://{{ $agent->company_url }}" target="_blank">{{ $agent->company_url }}</a>
             </div>
         </div>
     </div>

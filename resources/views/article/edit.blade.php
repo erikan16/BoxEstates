@@ -21,9 +21,15 @@
 
         <!-- /.box-header -->
         <div class="box-body pad">
-            {!! Form::model($article, ['route' => ['article.update', $article->id], 'method' => 'PUT']) !!}
+            {!! Form::model($article, ['route' => ['article.update', $article->id], 'method' => 'PUT', 'files' => true]) !!}
             <div class="row">
-                <div class="col-md-6 pull-right">
+                <div class="col-md-6">
+                    <div class="col-md-6">
+                        {{ Form::label('image', 'Article Feature Image') }}
+                        {{ Form::file('image', array('class' => 'file')) }}
+                    </div>
+                </div>
+                <div class="col-md-6">
                     <div class="form-group">
                         {{ Form::label('slug', 'URL Slug') }}
                         {{ Form::text('slug', null, array('class' => 'form-control input-md', 'minlength' => '5' ,'maxlength' => '40')) }}
@@ -37,14 +43,6 @@
             <div class="form-group">
                 {{ Form::label('description', 'Description') }}
                 {{ Form::textarea('description', null, array('class' => 'textarea')) }}
-            </div>
-            <div class="form-group">
-                <label>Key Words</label>
-                <p>
-                    <span class="label label-danger">For Sale</span>
-                    <span class="label label-success">Orlando, FL</span>
-                    <span class="label label-info">Family Home</span>
-                </p>
             </div>
             <div class="form-group">
                 <div class="pull-right">
@@ -63,8 +61,6 @@
             <ul>
                 <li>The maximum file size for uploads in this is <strong>999 KB</strong> (default file size is unlimited).</li>
                 <li>Only image files (<strong>JPG, GIF, PNG</strong>) are allowed (by default there is no file type restriction).</li>
-                <li>Uploaded files will be deleted automatically after <strong>5 minutes or less</strong> (demo files are stored in memory).</li>
-                <li>You can <strong>drag &amp; drop</strong> files from your desktop on this page</li>
             </ul>
         </div>
     </div>

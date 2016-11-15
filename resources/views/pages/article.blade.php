@@ -381,14 +381,13 @@
                         @foreach($articles as $article)
                         <div class="item">
                             <div class="ui small image">
-                                @if (false == empty($article->getAuthorImage()->image))
+                                @if (false == empty($article->image))
                                     <div class="ui small image">
-                                        <img src="{{ asset('images/' . $article->getAuthorImage()->image) }}">
-                                        {{--<img src="{{ asset('assets/images/2.0_image_holder.png') }}">--}}
+                                        <img src="{{ asset('images/article/' . $article->image) }}">
                                     </div>
                                 @else
                                     <div class="ui small image">
-                                        <img src="{{ asset('assets/images/2.0_image_holder.png') }}">
+                                        <img src="{{ asset('assets/images/small_logo.jpg') }}">
                                     </div>
                                 @endif
                             </div>

@@ -36,10 +36,12 @@
                 <h2>Find what you need when you need it</h2>
                 <form class="ui form">
                     <div class="field middle">
-                        <input class="main-search" type="text" name="home-search" placeholder="Enter an address, neighborhood, city, or zip code">
+                        <a href="{{'pages/buy'}}">
+                            <div class="ui large button">Get Started <i class="arrow right icon"></i></div>
+                        </a>
                     </div>
                 </form>
-                <div class="ui large button">Get Started <i class="arrow right icon"></i></div>
+
             </div>
         </div>
 
@@ -50,12 +52,12 @@
                         <div class="ui equal width stackable internally celled grid">
                             <div class="center aligned column">
                                 <div class="main-icon">
-                                    <i class="massive tags icon"></i>
+                                    <i class="massive user icon"></i>
                                 </div>
                                 <div class="intro">
-                                    <p>Our current listings of homes for sale and for rent are always up to date. We make searching a breeze.  </p>
+                                    <p>Finding the perfect agent can be hard and frustrating. Search through our list of agents to find your match.</p>
                                 </div>
-                                <div class="ui small button home"><a href="{{'pages/buy'}}">Read More</a></div>
+                                <div class="ui small button home"><a href="{{'pages/agent'}}">Read More</a></div>
                             </div>
 
                             <div class="center aligned column">

@@ -612,4 +612,13 @@ h2.ui.header {
     box-shadow: 2px 4px 10px -3px rgba(102,102,102,1);
 }
 
+img.articleImage {
+    padding: 0 20px 20px 0;
+    float: left;
+}
+
+.comments {
+    padding-top: 50px;
+    clear: both;
+}
 

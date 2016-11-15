@@ -33,6 +33,8 @@ Route::get('pages/property/{id}', ['as' => 'property.single', 'uses' => 'Propert
 Route::get('/', 'PagesController@getIndex');
 
 
+
+
 // Dashboard Pages Routes
 
 Route::resource('dashboard', 'DashboardController@getIndex');

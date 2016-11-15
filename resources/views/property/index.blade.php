@@ -37,7 +37,7 @@
                         <th>Address</th>
                         <th>Description</th>
                         <th>Date</th>
-                        <th>Key Words</th>
+                        <th>Tags</th>
                         <th class="noIcon"></th>
                     </tr>
                 </thead>
@@ -52,8 +52,11 @@
                         <td> {!!html_entity_decode(substr($property->description, 0, 20))!!}{!!html_entity_decode(strlen($property->description) > 20 ? "..." : "" )!!}</td>
                         <td> {{ date('m/j/y', strtotime($property->created_at)) }} </td>
                         <td>
-                            <span class="label label-success">For Sale</span>
-                            <span class="label label-success">Apopka, FL </span>
+                            <div class="tags">
+                                @foreach($property->tags as $tag)
+                                    <span class="label label-default">{{$tag->name}}</span>
+                                @endforeach
+                            </div>
                         </td>
                         <td>
                             <a href="{{ route('property.show', $property->id) }}" class="btn btn-block btn-primary btn-sm view">View</a>
@@ -68,7 +71,7 @@
                     <th>Address</th>
                     <th>Description</th>
                     <th>Date</th>
-                    <th>Key Words</th>
+                    <th>Tags</th>
                     <th></th>
                 </tr>
                 </tfoot>

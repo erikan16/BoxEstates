@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Article;
 use App\Profile;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\File as File;
 
 
 class ArticleController extends Controller
@@ -72,7 +74,8 @@ class ArticleController extends Controller
         $this->validate($request, array(
             'title' => 'required|max:255',
             'description' => 'required',
-            'slug' => 'required|alpha_dash|min:5|max:40|unique:articles,slug'
+            'slug' => 'required|alpha_dash|min:5|max:40|unique:articles,slug',
+             'image' => 'sometimes|image'
         ));
 
         $article = new Article;
@@ -81,6 +84,16 @@ class ArticleController extends Controller
         $article->description = $request->description;
         $article->slug = $request->slug;
         $article->user_id = Auth::user()->id;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/article/' . $filename);
+
+            Image::make($image)->resize(650, 650)->save($location);
+
+            $article->image = $filename;
+        }
 
         $article->save();
 
@@ -158,6 +171,20 @@ class ArticleController extends Controller
         $article->description = $request->input('description');
         $article->slug = $request->input('slug');
         $article->user_id = Auth::user()->id;
+
+        if ($request->hasFile('image')) {
+
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/article/' . $filename);
+            Image::make($image)->resize(650, 650)->save($location);
+
+            $oldFilename = $article->image;
+
+            $article->image = $filename;
+
+            File::delete(public_path('images/'. $oldFilename));
+        }
 
         $article->save();
 

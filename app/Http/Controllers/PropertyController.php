@@ -11,6 +11,7 @@ use App\Http\Requests;
 use App\Property;
 use App\Profile;
 use App\PropertyGallery;
+use App\Tag;
 
 
 class PropertyController extends Controller
@@ -57,13 +58,14 @@ class PropertyController extends Controller
     {
         $user = Auth::user();
         $profile = Profile::where('user_id', $user->id)->first();
+        $tags = Tag::all();
 
         return view('property.create', [
 
             'user' => Auth::user(),
             'profile' => $profile
 
-        ]);
+        ])->withTags($tags);
     }
 
     /**
@@ -77,6 +79,7 @@ class PropertyController extends Controller
         $this->validate($request, array(
             'title' => 'required|max:255',
             'address' => 'required|max:255',
+            'city' => 'required|max:255',
             'state' => 'required|max:255',
             'zipcode' => 'required|max:11',
             'beds' => 'required|max:2',
@@ -94,6 +97,7 @@ class PropertyController extends Controller
         $property->title = $request->title;
         $property->address = $request->address;
         $property->state = $request->state;
+        $property->city= $request->city;
         $property->zipcode = $request->zipcode;
         $property->beds = $request->beds;
         $property->baths = $request->baths;
@@ -103,7 +107,10 @@ class PropertyController extends Controller
         $property->homeType = $request->homeType;
         $property->listingType = $request->listingType;
         $property->user_id = Auth::user()->id;
+
         $property->save();
+
+        $property->tags()->sync($request->tags, false);
 
         Session::flash('success', 'Property was saved successfully!');
 
@@ -154,11 +161,17 @@ class PropertyController extends Controller
     {
         $property = Property::find($id);
 
+        $tags = Tag::all();
+        $tags2 = array();
+        foreach ($tags as $tag) {
+            $tags2[$tag->id] = $tag->name;
+        }
+
         return view('property.edit', [
 
             'user' => Auth::user()
 
-        ])->withProperty($property);
+        ])->withProperty($property)->withTags($tags2);
     }
 
     /**
@@ -174,6 +187,7 @@ class PropertyController extends Controller
             'title' => 'required|max:255',
             'address' => 'required|max:255',
             'state' => 'required|max:255',
+            'city' => 'required|max:255',
             'zipcode' => 'required|max:11',
             'beds' => 'required|max:2',
             'baths' => 'required|max:2',
@@ -189,6 +203,7 @@ class PropertyController extends Controller
         $property->title = $request->input('title');
         $property->address = $request->input('address');
         $property->state = $request->input('state');
+        $property->city= $request->input('city');
         $property->zipcode = $request->input('zipcode');
         $property->beds = $request->input('beds');
         $property->baths = $request->input('baths');
@@ -198,6 +213,14 @@ class PropertyController extends Controller
         $property->homeType = $request->input('homeType');
         $property->listingType = $request->input('listingType');
         $property->user_id = Auth::user()->id;
+
+
+        if (isset($request->tags)) {
+            $property->tags()->sync($request->tags);
+        } else {
+            $property->tags()->sync(array());
+        }
+
         $property->save();
 
         Session::flash('success', 'This property was successfully updated!');

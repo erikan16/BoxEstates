@@ -23,6 +23,7 @@ class PagesController extends Controller {
 
     public function getBuy() {
         $properties = Property::orderBy('created_at')->get();
+
         return view('pages.buy')->withProperties($properties);
     }
 

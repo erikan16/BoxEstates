@@ -37,11 +37,10 @@ class DashboardController extends Controller {
 
         return view('dashboard.dashboard', [
 
-            'user' => $user,
-            'profile' => $profile,
+            'user' => $user
 //            'comments' => $comments
 
-        ])->withTodos($todos)->withComments($comments);
+        ])->withTodos($todos)->withComments($comments)->withProfile($profile);
 
     }
 

@@ -6,6 +6,8 @@
     {{--<title>@yield('dashboardTitle')</title>--}}
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    @yield('stylesheet')
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
     <!-- Font Awesome -->
@@ -14,8 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/iCheck/flat/blue.css') }}">
-
-    @yield('stylesheet')
 
     <!-- Custom style -->
     <link rel="stylesheet" href="{{ asset('assets/css/dashboard_styles.css') }}">
@@ -26,6 +26,9 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css">
 
+    @yield('headerScripts')
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,10 +36,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Parsley script -->
-    <script src="{{ asset('assets/plugins/parsley/parsley.min.js') }}"></script>
-
-    @yield('headerScripts')
 
 </head>
 

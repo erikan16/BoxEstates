@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Profile;
+use App\Article;
 use App\Http\Requests;
 use Mail;
 use Session;
@@ -23,9 +24,9 @@ class AgentSingleController extends Controller
     public function getSingle($id){
 
         $agent = Profile::where('id', '=', $id)->first();
-        $email = $agent->email;
+        $image = Article::where('id', '=', $id)->first();
 
-        return view ('profile.single')->withAgent($agent);
+        return view ('profile.single')->withAgent($agent)->withImage($image);
     }
 
     public function contactAgent(Request $request, $id) {

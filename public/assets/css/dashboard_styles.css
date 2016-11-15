@@ -2041,3 +2041,9 @@ table.dataTable thead .noIcon.sorting::after{
 }
 
 a { color: #fff;}
+
+/* Featured Image View */
+img.articleImg {
+    width: 50%;
+    height: 50%;
+}

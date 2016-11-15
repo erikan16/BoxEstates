@@ -23,12 +23,17 @@
             <div class="row">
                 <div class="col-md-8">
                     {!!html_entity_decode($article->description)!!}
-                </div>
+                    @if($article->image != null)
+                        <hr>
+                        <h4 class="box-title">Featured Image</h4>
+                        <img src="{{ asset('images/article/'. $article->image) }}" class="img-bordered articleImg img-responsive">
+                    @endif
+               </div>
                 <div class="col-md-4">
                     <div class="well">
                         <dl class="dl-horizontal">
                         <label>URL Slugs:</label>
-                        <a href="{{ url('pages/'.$article->slug) }}" target="blank">{{ url('pages/'.$article->slug) }}</a>
+                        <a href="{{ url('pages/article/slug', $article->slug) }}" target="blank">{{ url('pages/article/slug', $article->slug) }}</a>
                         </dl>
                         <dl class="dl-horizontal">
                             <label>Created:</label>

@@ -200,11 +200,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{--<img src="{{ asset('assets/images/1.0_buy.jpg') }}">--}}
-                                        <img src="/images/property/{{ $property->getFirstImage()->file_name  }}">
+                                        <img src="{{ asset('assets/images/1.0_buy.jpg') }}">
+                                        {{--<img src="/images/property/{{ $property->getFirstImage()->file_name  }}">--}}
                                     </div>
                                     <div class="content">
-                                        <div class="ui red empty circular label"></div> For Sale
+                                        @if ($property->listingType == 'sale')
+                                            <div class="ui red empty circular label"></div> For Sale
+                                        @elseif($property->listingType == 'rent')
+                                            <div class="ui blue empty circular label"></div> For Rent
+                                        @else
+                                            <div class="ui purple empty circular label"></div> Foreclosure
+                                        @endif
                                         <div class="meta">
                                             <span class="date">{{ $property->beds }} bedrooms {{ $property->baths }} baths <br> {{ $property->feet }} sq ft</span>
                                         </div>

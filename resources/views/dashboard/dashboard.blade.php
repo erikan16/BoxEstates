@@ -33,7 +33,8 @@
                         <!-- chat item -->
                         @foreach($comments as $comment)
                         <div class="item">
-                            <img src="{{ asset('assets/images/guest_avatar.jpg') }}" alt="user image">
+                            {{--<img src="{{ asset('images/default.jpg') }}" alt="user image">--}}
+                            <img src="{{ asset('images/'. $profile->image) }}" alt="user image">
 
                             <p class="message">
                                 <a href="{{ $comment['link']  }}" class="name">

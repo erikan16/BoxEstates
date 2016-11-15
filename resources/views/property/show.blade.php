@@ -68,13 +68,37 @@
                     </div>
                 </div>
             </div>
+
+            <div class="form-group">
+                <label>Tags:</label>
+                <div class="well">
+                    <div class="tags">
+                        @foreach($property->tags as $tag)
+                            <span class="label label-default">{{$tag->name}}</span>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Image Upload </h3>
+        </div>
+        <div class="panel-body">
             <form action="{{ url('property/imageUpload') }}" class="dropzone" name="file" id="addImages" method="POST">
                 {{ csrf_field() }}
                 <input type="hidden" name="property_id" value="{{ $property->id }}">
 
             </form>
+            <br>
+            <ul>
+                <li>The maximum file size for uploads in this is <strong>999 KB</strong> (default file size is unlimited).</li>
+                <li>Only image files (<strong>JPG, GIF, PNG</strong>) are allowed (by default there is no file type restriction).</li>
+                <li>You can <strong>drag &amp; drop</strong> files from your desktop on the box above.</li>
+            </ul>
         </div>
-        <!-- /.box-body -->
     </div>
 @endsection
 

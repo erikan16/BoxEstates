@@ -16,9 +16,9 @@
     <div class="ui two column stackable grid container">
         <div class=" six wide column">
             <div class="ui segment">
-                <h1>617 Majestic Oak Dr.<br>
+                <h1>{{ $property->address }}<br>
                     <span class="address">
-                            Apopka, FL 32712</span>
+                            {{ $property->city }}, {{ $property->state }} {{ $property->zipcode }}</span>
                 </h1>
                 <h5>
                     <img class="ui avatar image" src="{{asset('assets/icons/sleeping-bed-silhouette.svg')}}"> {{ $property->beds }} beds <br>
@@ -26,7 +26,13 @@
                     <img class="ui avatar image" src="{{ asset('assets/icons/set-square.svg') }}">{{ $property->feet }} sq ft
                 </h5>
                 <div class="marketInfo">
+                    @if ($property->listingType == 'sale')
                     <div class="ui red empty circular label"></div> For Sale
+                    @elseif($property->listingType == 'rent')
+                        <div class="ui blue empty circular label"></div> For Rent
+                    @else
+                        <div class="ui purple empty circular label"></div> Foreclosure
+                    @endif
 
                     <div class="priceInfo">
                         <h2>$ {{ $property->price }}</h2>
@@ -34,9 +40,8 @@
 
                     <div class="agentInfo">
                         <h4>Agent:
-                            <a href="agent_single.html">
-                                <img class="ui avatar image" src="{{ asset('assets/images/1.0_girl.jpg') }}"> Sally Jones</h4>
-                        </a>
+                            <img class="ui avatar image" src="{{ asset('images/' . $property->getAuthorImage()) }}"> {{ $property->getArticleAuthor()->name }}
+                        </h4>
                     </div>
 
                 </div>
@@ -45,7 +50,7 @@
         <div class=" ten wide column">
             <div class="ui segment">
                 <div id="gallery" style="display:none;">
-                    @foreach($property->images() as $image)
+                    @foreach($property->imagesDisplay() as $image)
 
                         <a href="http://unitegallery.net">
                             <img
@@ -60,6 +65,8 @@
             </div>
         </div>
         <div class="sixteen wide column">
+            <p> {!!html_entity_decode($property->description)!!}</p>
+            <hr>
             <div style="height: 400px;" id="map"></div>
         </div>
     </div>

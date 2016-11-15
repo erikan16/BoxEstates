@@ -157,6 +157,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        PragmaRX\ZipCode\Vendor\Laravel\ServiceProvider::class,
 
     ],
 
@@ -206,6 +207,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'ZipCode' => PragmaRX\ZipCode\Vendor\Laravel\Facade::class,
     ],
 
 ];
