@@ -352,26 +352,26 @@
             {{--</div>--}}
         {{--</div>--}}
 
-        <div class="row">
-            <div class="left floated five wide column">
-                <h4 class="ui header">
-                    <i class="trophy icon"></i>
-                    <div class="content">
-                        Trending posts
-                        <div class="ui inline dropdown trending">
-                            <div class="text">today</div>
-                            <i class="dropdown icon"></i>
-                            <div class="menu">
-                                <div class="header">Adjust time span</div>
-                                <div class="active item" data-text="today">Today</div>
-                                <div class="item" data-text="this week">This Week</div>
-                                <div class="item" data-text="this month">This Month</div>
-                            </div>
-                        </div>
-                    </div>
-                </h4>
-            </div>
-        </div>
+        {{--<div class="row">--}}
+            {{--<div class="left floated five wide column">--}}
+                {{--<h4 class="ui header">--}}
+                    {{--<i class="trophy icon"></i>--}}
+                    {{--<div class="content">--}}
+                        {{--Trending posts--}}
+                        {{--<div class="ui inline dropdown trending">--}}
+                            {{--<div class="text">today</div>--}}
+                            {{--<i class="dropdown icon"></i>--}}
+                            {{--<div class="menu">--}}
+                                {{--<div class="header">Adjust time span</div>--}}
+                                {{--<div class="active item" data-text="today">Today</div>--}}
+                                {{--<div class="item" data-text="this week">This Week</div>--}}
+                                {{--<div class="item" data-text="this month">This Month</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</h4>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
 
         <div class="row">
