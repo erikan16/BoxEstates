@@ -63,7 +63,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset($property->getFirstImage()) }}" style="height: 200px">
+                                        <img src="{{ asset($property->getFirstImage()) }}" style="height: 250px">
                                         {{--<img src="/images/property/{{ $property->getFirstImage()->file_name  }}">--}}
                                     </div>
                                     <div class="content">
