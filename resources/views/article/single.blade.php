@@ -5,6 +5,7 @@
 @section('stylesheets')
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
     <link rel="stylesheet" href="{{ asset('assets/css/unite-gallery.css') }}" type="text/css">
+    <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 @endsection
 
 
@@ -13,7 +14,7 @@
     <div class="wrapper article">
 
         <!-- Main Page -->
-        <div class="ui middle aligned stackable grid container">
+        <div class="ui middle aligned stackable grid container" id="twitter-wjs">
             <div class="row articleHeader">
                 <div class="nine wide column">
                     <h1>{{ $article->title }}</h1>
@@ -44,6 +45,16 @@
                 </div>
             </div>
         </div>
+        {{--<blockquote class="twitter-tweet">--}}
+            {{--<p lang="en" dir="ltr">Sunsets don&#39;t get much better than this one over--}}
+                {{--<a href="https://twitter.com/GrandTetonNPS">@GrandTetonNPS</a>.--}}
+                {{--<a href="https://twitter.com/hashtag/nature?src=hash">#nature</a>--}}
+                {{--<a href="https://twitter.com/hashtag/sunset?src=hash">#sunset</a>--}}
+                {{--<a href="http://t.co/YuKy2rcjyU">pic.twitter.com/YuKy2rcjyU</a></p>--}}
+            {{--&mdash; US Dept of Interior (@Interior)--}}
+            {{--<a href="https://twitter.com/Interior/status/463440424141459456">May 5, 2014</a>--}}
+        {{--</blockquote>--}}
+
 
         <div class="ui text container">
             <div class="textWrapper">
@@ -88,15 +99,54 @@
                         </div>
                     </div>
                     <div class="one wide column">
-                        <div class="ui labeled icon vertical menu">
-                            <a class="item"><i class="twitter icon"></i> Tweet</a>
-                            <a class="item"><i class="facebook icon"></i> Share</a>
-                            <a class="item"><i class="mail icon"></i> E-mail</a>
+                        <div class="ui labeled icon vertical menu item">
+                            <a href="{{ route('article.single', $article->slug) }}" title="{{ $article->title }} @boxestates"
+                               class="tweet item" target="_blank"> <i class="twitter icon"></i>  Tweet</a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url('article.single', $article->slug)) }}" class="item social"><i class="facebook icon"></i> Share</a>
+                            <a href="https://plus.google.com/share?url={{ urlencode(url('article.single', $article->slug)) }}" class="item social"><i class="google plus icon"></i> Google Plus</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+    <script>
+        // We bind a new event to our link
+        $('a.tweet').click(function(e){
+
+            //We tell our browser not to follow that link
+            e.preventDefault();
+
+            //We get the URL of the link
+            var loc = $(this).attr('href');
+
+            //We get the title of the link
+            var title  = encodeURIComponent($(this).attr('title'));
+
+            //We trigger a new window with the Twitter dialog, in the middle of the page
+            window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+        });
+
+        var popupSize = {
+            width: 780,
+            height: 550
+        };
+
+        $(document).on('click', '.social', function(e){
+
+            var
+                    verticalPos = Math.floor(($(window).width() - popupSize.width) / 2),
+                    horisontalPos = Math.floor(($(window).height() - popupSize.height) / 2);
+
+            var popup = window.open($(this).prop('href'), 'social',
+                    'width='+popupSize.width+',height='+popupSize.height+
+                    ',left='+verticalPos+',top='+horisontalPos+
+                    ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');
+
+            if (popup) {
+                popup.focus();
+                e.preventDefault();
+            }
+        });
+    </script>
 @endsection
