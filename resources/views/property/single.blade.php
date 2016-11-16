@@ -51,13 +51,10 @@
             <div class="ui segment">
                 <div id="gallery" style="display:none;">
                     @foreach($property->imagesDisplay() as $image)
-
-                        <a href="http://unitegallery.net">
                             <img
                                     src="/images/property/{{ $image->file_name }}"
                                  data-image="/images/property/{{ $image->file_name }}"
                                  style="display:none">
-                        </a>
 
                     @endforeach
 
