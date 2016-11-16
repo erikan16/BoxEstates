@@ -218,9 +218,11 @@ class PropertyController extends Controller
         $property->listingType = $request->input('listingType');
         $property->user_id = Auth::user()->id;
 
+//        print_r($request->tags2);
+//        exit;
 
-        if (isset($request->tags)) {
-            $property->tags()->sync($request->tags);
+        if (isset($request->tags2)) {
+            $property->tags()->sync($request->tags2);
         } else {
             $property->tags()->sync(array());
         }

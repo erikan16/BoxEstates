@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PropertyGallery;
 use Doctrine\DBAL\Platforms\Keywords\ReservedKeywordsValidator;
 use Illuminate\Http\Request;
 use App\Http\Requests;

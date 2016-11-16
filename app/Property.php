@@ -14,6 +14,7 @@ class Property extends Model
     public function images()
     {
         return $this->hasMany('App\PropertyGallery');
+
     }
 
     public function imagesDisplay()
@@ -23,7 +24,8 @@ class Property extends Model
 
     public function getFirstImage()
     {
-        return $this->hasMany('App\PropertyGallery')->first();
+        return PropertyGallery::find($this->id)->file_path;
+
     }
 
     public function getArticleAuthor(){
